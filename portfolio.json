@@ -1,0 +1,33 @@
+{
+	"personalProjects" : {
+		"Nordburg.ca": {
+			"tags" : ["php", "mysql", "HTML/CSS/Javascript"],
+			"sig" : "<p>My main website.  Most of what I do ends up there.</p>\n\t\t\t<p>Sadly, there a bunch of aspects of this site that exist only for admins (ie: me).  Such as a <a href=\"https://nordburg.ca/testPHP/keywordsTest/keywordPageTest.php\">keywords widget</a>, or an ATOM feed utility, and all user management features.</p>\n",
+			"link" : [{"url":"https://www.nordburg.ca", "text": "Nordburg Solutions"}]
+		},
+		"Mr. Falcon js": {
+			"tags" : ["HTML/CSS/Javascript", "Game"],
+			"sig" : "<p>When I was a kid, I created a superhero, Mr. Falcon. Then, I wrote three games using QBASIC.  Over time, the original games became unplayable. So I re-wrote them in Javascript (without the use of frameworks, libraries, or game engines). The purpose was to take my Javascript to the next level, to learn OOP in Javascript, and allow for game-play in a browser so anyone could play, regardless of operating system.</p>",
+			"link": [{"url" : "https://www.mrfalcon.ca", "text" : "The Mr. Falcon Website"}]
+		},
+		"Other Firefox extensions, and the website for them": {"tags" : []},
+		"Misc projects": {"tags" : []},
+    		"Comparitor": {"tags" : []},
+		    "Stickies": {"tags" : []},
+    		"To-do list": {"tags" : []},
+	    	"Bookmarks": {"tags" : []},
+	    	"Dilbert Search (WIP)": {"tags" : []},
+		"Accessible Password Requirements widget": {"tags" : []},
+		"Backpay Calculator": {"tags" : []},
+		"Reverse Mortgage calculator": {"tags" : []},
+		"Investment calculator": {"tags" : []},
+		"Tax API": {"tags" : []},
+		"Apple Scripts": {"tags" : []},
+		"UUAG/ATAG Quick References": {"tags" : []},
+		"Wall-builder calculator": {"tags" : []},
+		"Fieldrunner": {"tags" : []},
+		"Sky Flyer": {"tags" : []},
+		"ATOM wrapper": {"tags" : []},
+		"Setting up nordburg.ca as Git endpoints": {"tags" : []}
+	}
+}
