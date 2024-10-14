@@ -1,33 +1,239 @@
 {
 	"personalProjects" : {
 		"Nordburg.ca": {
-			"tags" : ["php", "mysql", "HTML/CSS/Javascript"],
-			"sig" : "<p>My main website.  Most of what I do ends up there.</p>\n\t\t\t<p>Sadly, there a bunch of aspects of this site that exist only for admins (ie: me).  Such as a <a href=\"https://nordburg.ca/testPHP/keywordsTest/keywordPageTest.php\">keywords widget</a>, or an ATOM feed utility, and all user management features.</p>\n",
+			"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript"],
+			"sig" : "<p>My main website.  Most of what I do ends up there.</p>\n\t\t\t<p>Sadly, there are a lof of really neat aspects of this site that exist only for admins (ie: me).  Such as a <a href=\"https://nordburg.ca/testPHP/keywordsTest/keywordPageTest.php\">keywords widget</a>, or an ATOM feed utility, and all user management features.</p>\n\t\t\t\t<p>But there are a lof of write-ups, and links; too many to list here.</p>\n\t\t\t\t<p>The main thing to note here is that the site involves my own custom PHP framework, of sorts, so that I can throw together a form-driven site or app pretty quickly.  And user management.  While, you can sign up for an account, there's not much use at this point.  There are a few apps that require sign-in (a to-do list, a bookmark app, etc., but they're mostly proof-of-concept rather than full fledged apps).</p>\n\t\t\t\t<p>The other thing about this site is that it uses the <a href=\"https://wet-boew.github.io/wet-boew/index.html\">Web Experience Toolkit (WET)</a>.  When I was working in web accessibility, it was part of my job to guide clients to use WET wherever possible. So, I took my own advice and implemented it on nordburg.ca so I could better help my clients; and so that I wouldn't have to re-invent the wheel whenever I needed something arleady accomplished by WET.</p>",
 			"link" : [{"url":"https://www.nordburg.ca", "text": "Nordburg Solutions"}]
 		},
+		"Dilbert Search": {
+			"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "ATOM"],
+			"sig" : "<p>When Dilbert was cancelled, I still found it (particularely the \"Golden Age\" comics) still funny and relevant. The comics are still hosted on a content delivery network, and the links to those comics, along with comic titles, keywords, and transcripts, are all still on the Internet Archive.</p>\n\t\t\t\t<p>So I wrote some code to grab the data from the Internet Archive.  I then go and clean up the title, alternate text, transcripts and keywords. You can search for words, phrases, characters, etc.  The search engine searches alt text, transcripts, titles, and keywords, and gives a list of relevant comics.</p>\n\t\t\t\t<p>For logged-in users of nordburg.ca, you can Favorite comics.</p>\n\t\t\t\t<p>Furthermore, there are 4 ATOM feeds; one for all of Dilbert, one for early Dilbert, one for late Dilbert, and one for \"Golden Age\" Dilbert.  Each are updated daily.</p>",
+			"link" : [{"url" : "https://dev.nordburg.ca/misc/dilbert/index.php", "text" : "Dilbert Search"}]
+		},
+		"Nordburg Bookmarks" : {
+			"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "authenticated", "proof-of-concept"],
+			"sig" : "<p>A place for users of nordburg.ca to store list of links.  Like browser bookmarks, but not tied to a specific browser or browser instance.</p>\n\t\t\t\t<p>It's pretty proof-of-concept.  Even I don't use it.  Yet.  I envision being able to get the your list of links in a JSON format, and maybe display elsewhere, like in a browser extension.  Maybe one day.</p>\n\t\t\t\t<p>Requires nordburg.ca account.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/misc/bookmarks/bookmarks.php", "text" : "Nordburg Bookmarks"}]
+		},
+		"Nordburg Comparitor" : {
+			"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "authenticated", "proof-of-concept"],
+			"sig" : "<p>Want to know which cell phone plan you should choose?  Or which job to take?  Or which city to live in?</p>\n\t\t\t\t\t<p>The Nordburg Comparitor allows you to enter various criteria (cost, location, whatever), and a bunch of things you're comparing (Bell, Telus, etc.) to allow you to see all factors in one place to help you make a decision.</p>\n\t\t\t\t\t<p>It's pretty proof-of-concept.  I envision being able to share your comparisons publicly on a per-comparison.  Maybe one day.</p>\n\t\t\t\t<p>Requires nordburg.ca account.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/misc/comparitor/comparitor.php", "text" : "Nordburg Comparitor"}]
+		},
+		"Nordburg Sticky Note" : {
+			"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "authenticated", "proof-of-concept"],
+			"sig" : "<p>A place for users of nordburg.ca to store bits of information in an unorganized manner.  Like a big sticky note.</p>\n\t\t\t\t<p>Requires nordburg.ca account.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/misc/stickies.php", "text" : "Nordburg Sticky Note"}]
+		},
+		"Nordburg To-Dos" : {
+			"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "authenticated", "proof-of-concept"],
+			"sig" : "<p>A pretty simple To-Do list; or a list of To-Do lists.</p>\n\t\t\t\t\t<p>Requires nordburg.ca account.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/misc/comparitor/comparitor.php", "text" : "Nordburg To-Dos"}]
+		},
+		"ATAG as JSON" : {
+			"tags" : ["personal", "accessibility", "ATAG", "json"],
+			"sig" : "<p>In case anyone needs the Authoring Tools Accessibility Guidelines in JSON file, here it is.</p>",
+			"link" : [{"url" : "https://github.com/andrewnordlund/atag-as-json", "text" : "GitHub repo"}, {"url" : "https://www.npmjs.com/package/atag-as-json", "text" : "npm Page"}]
+		},
+		"ATAG Quick Reference" : {
+			"tags" : ["personal", "accessibility", "ATAG", "HTML/CSS/Javascript"],
+			"sig" : "<p>A use-case of ATAG as JSON.  It allows you to filter ATAG criteria by level, section, etc.</p>",
+			"link" : [{"url" : "https://andrewnordlund.github.io/atag-quick-ref/", "text" : "ATAG Quick Reference"}, {"url" : "https://github.com/andrewnordlund/atag-quick-ref/", "text" : "GitHub repo"}, {"url" : "https://www.npmjs.com/package/atag-as-json", "text" : "npm Page"}]
+		},
+		"UAAG as JSON" : {
+			"tags" : ["personal", "accessibility", "UAAG", "json"],
+			"sig" : "<p>In case anyone needs the User Agent Accessibility Guidelines in JSON file, here it is.</p>",
+			"link" : [{"url" : "https://github.com/andrewnordlund/uaag-as-json", "text" : "GitHub repo"}, {"url" : "https://www.npmjs.com/package/uaag-as-json", "text" : "npm Page"}]
+		},
+		"UAAG Quick Reference" : {
+			"tags" : ["personal", "accessibility", "UAAG", "HTML/CSS/Javascript"],
+			"sig" : "<p>A use-case of UAAG as JSON.  It allows you to filter UAAG criteria by level, section, etc.</p>",
+			"link" : [{"url" : "https://andrewnordlund.github.io/uaag-quick-ref/", "text" : "UAAG Quick Reference"}, {"url" : "https://github.com/andrewnordlund/uaag-quick-ref/", "text" : "GitHub repo"}, {"url" : "https://www.npmjs.com/package/uaag-as-json", "text" : "npm Page"}]
+		},
+		"What's Wrong With Accessibility Mode?" : {
+			"tags" : ["personal", "accessibility", "php", "HTML/CSS/Javascript", "writing"],
+			"sig" : "<p>It's all too common to see an option for \"Accessibility Mode\" or something similar on a web app. At the very least, it exposes the ignorange of the product owners. At the most, it's harmful to people with disabilities.  This essay explores that.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/a11y/accessibilityModes.php", "text" : "What's Wrong With Accessibility Mode?"}]
+		},
+		"How to Write Accessible Forms" : {
+			"tags" : ["personal", "accessibility", "php", "xml", "HTML/CSS/Javascript", "writing"],
+			"sig" : "<p>This takes you through the process of making an inaccessible form into an accessible form, using the most common failures at the time of its writing.</p>\n\t\t\t\t<p>This can be viewed as a single page explanation, or broken up into one section per page.</p>\n\t\t\t\t<p>My method of doing this was to put all the writing in XML files, and use PHP to parse them out and make a whole thing.  I suppose it could have been the start of a custom content management system.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/a11y/accessibleForms.php", "text" : "How to Write Accessible Forms"}]
+		},
+		"Science Tracker" : {
+			"tags" : ["php", "HTML/CSS/Javascript", "upcoming", "ATOM"],
+			"sig" : "<p>A place for me to track science studies and articles related to topics which interest me.  As of this writing, it's too early to be of any use.  It's probably also pretty buggy.  Major topics will have their own ATOM feed one could subscribe to.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/science-tracker/", "text" : "Nordburg Science Tracker"}]
+		},
 		"Mr. Falcon js": {
-			"tags" : ["HTML/CSS/Javascript", "Game"],
+			"tags" : ["personal", "HTML/CSS/Javascript", "Game"],
 			"sig" : "<p>When I was a kid, I created a superhero, Mr. Falcon. Then, I wrote three games using QBASIC.  Over time, the original games became unplayable. So I re-wrote them in Javascript (without the use of frameworks, libraries, or game engines). The purpose was to take my Javascript to the next level, to learn OOP in Javascript, and allow for game-play in a browser so anyone could play, regardless of operating system.</p>",
 			"link": [{"url" : "https://www.mrfalcon.ca", "text" : "The Mr. Falcon Website"}]
 		},
-		"Other Firefox extensions, and the website for them": {"tags" : []},
-		"Misc projects": {"tags" : []},
-    		"Comparitor": {"tags" : []},
-		    "Stickies": {"tags" : []},
-    		"To-do list": {"tags" : []},
-	    	"Bookmarks": {"tags" : []},
-	    	"Dilbert Search (WIP)": {"tags" : []},
-		"Accessible Password Requirements widget": {"tags" : []},
-		"Backpay Calculator": {"tags" : []},
-		"Reverse Mortgage calculator": {"tags" : []},
-		"Investment calculator": {"tags" : []},
-		"Tax API": {"tags" : []},
-		"Apple Scripts": {"tags" : []},
-		"UUAG/ATAG Quick References": {"tags" : []},
-		"Wall-builder calculator": {"tags" : []},
-		"Fieldrunner": {"tags" : []},
-		"Sky Flyer": {"tags" : []},
-		"ATOM wrapper": {"tags" : []},
-		"Setting up nordburg.ca as Git endpoints": {"tags" : []}
+		"Field Runner": {
+			"tags" : ["personal", "HTML/CSS/Javascript", "Game", "Proof-of-Concept"],
+			"sig" : "<p>When learning a new language, it's good to learn to animate, and control events via arrow-keys.  That's what Field Runner is.  It's the least challenging platform game you'll ever play.</p>\n\t\t\t<p>My next challenge is to make this game accessible to people with disabilities.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/fieldrunner/fieldrunner.html", "text" : "Field Runner"}, {"url": "https://github.com/andrewnordlund/fieldrunner/", "text" : "GitHub Repo"}]
+		},
+		"Sky Flyer": {
+			"tags" : ["personal", "HTML/CSS/Javascript", "Game", "Proof-of-Concept"],
+			"sig" : "<p>Much like Field Runner, above, this is an even simpler Flight Simulator.</p>",
+			"link"  : [{"url" : "https://www.nordburg.ca/skyflyer/skyflyer.html", "text" : "Sky Flyer"}, {"url": "https://github.com/andrewnordlund/skyflyer", "text" : "GitHub Repo"}]
+		},
+		"Accessible Password Requirements widget": {
+			"tags" : ["personal", "HTML/CSS/Javascript", "accessibility"],
+			"sig" : "<p>When (re)setting a password, often times there are requirements (at least x characters, at least 1 uppercase letter, 1 lowercase letter, 1 special character, etc.).  Often times there are checkmarks and X's indicating if the requirement has been met. These are common, but difficult to do an an accessible mannaer.</p>\n\t\t\t<p>This widget is highly customizable and extensible.</p>\n",
+			"link" : [{"url" : "https://andrewnordlund.github.io/passwordRequirements/nordburgPwReqTest-Demo.html", "text":"Demo page"}, {"url" : "https://github.com/andrewnordlund/passwordRequirements", "text" : "GitHub Repo"}, {"url" : "https://www.npmjs.com/package/nordburg-pw-reqs", "text" : "npm Page"}]
+		},
+		"WWVF (WET Widget Version Finder) Firefox Extension" : {
+			"tags" : ["work", "accessibility", "Firefox", "extension", "HTML/CSS/Javascript", "Collaborative"],
+			"sig" : "<p>My first Firefox extension.  Initially the Web Experience Toolkit (WET) had different versions for each widget, rather than one version that applies to all widgets. Now it shows what version of WET a site is using (if it uses WET), and the versions of certain components (such as JQuery).</p>\n\t\t\t<p>This was collaborative in that I did the vast majority of the technical aspects.  Someone else applied styling to it.  I made it work.  Someone else made it look good.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/ext/home.php#wwvf-weSect", "text" : "Installation page"}, {"url" : "https://github.com/wet-boew/wetboew-version-finder-firefox-extension", "text" : "GitHub repo"}]
+		},
+		"Nordburg Stopwatch Firefox Extension" : {
+			"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "Proof-of-Contept"],
+			"sig" : "<p>A simple stopwatch in the browser. Initially used to time how long an accessibility audit took. But could be used to time anything.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/ext/home.php#nordTimer-weSect", "text" : "Installation page"}, {"url" : "https://github.com/andrewnordlund/nordtimer", "text" : "GitHub repo"}]
+		},
+		"Nordburg Forms Mode Simulator Firefox Extension" : {
+			"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "Accessibility"],
+			"sig" : "<p>Some screen readers (like NVDA and JAWS) have something called Forms Mode, where some content will not be read. This extension shows what those elements are.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/ext/home.php#nordFormsMode-weSect", "text" : "Installation page"}, {"url" : "https://github.com/andrewnordlund/nordFormsMode", "text" : "GitHub repo"}]
+		},
+		"Nordburg Focus Revealer Firefox Extension" : {
+			"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "Accessibility", "Collaborative"],
+			"sig" : "<p>WCAG requires that there is a visual indicator of which element has keyboard focus. But most pages fail WCAG, and many fail this requirement. As an accessibility auditor tabs through a page, if the visual focus indicator disappears, this extension shows you which element has focus. That way an auditor can see if the indicator is actually invisible, or they just don't see it.</p>\n\t\t\t\t<p>This is collaborative in that I did most of the technical parts, but the styling was done by someone else.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/ext/home.php#nordFocusRevealSect", "text" : "Installation page"}, {"url" : "https://github.com/andrewnordlund/nordfocusrevealer", "text" : "GitHub repo"}]
+		},
+		"Nordburg Validator Firefox Extension" : {
+			"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "Accessibility"],
+			"sig" : "<p>Before WCAG v2.2, it was required that certain aspects of HTML were valid.  (I always say valid and proper HTML is the bedrock of web accessibility.  If a developer were to be very careful about writing proper and HTML, they could write a fully accessible site entirely by accident.)</p>\n\t\t\t\t<p>For WCAG Success Criterion 4.1.1 - Parsing, it's a two step process: 1. Validate the page; 2. Remove any irrelevant failures.  There are two bookmarklets the do this, but the process tends to confuse newbies.  Also, the bookmarklets send unmodified content to W3C for validation. This could pose security risks.</p>\n\t\t\t\t<p>This extension does those two steps for you automatically on page-load, and again if you click the icon.  Also, it replaces text with a dummy character so no content is sent to W3C.  (This can be turned off in the Options.)</p>\n\t\t\t<p>Unfortunately, in its current state, it's not great at telling you where your failures are.  Just whether there are failures or not.  And, since WCAG 2.2 deprecated Success Criterion 4.1.1 - Parsing (even for WCAG 2.0 and 2.1), it's unlikely I'll ever improve this extension.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/ext/home.php#nordValidatorSect", "text" : "Installation page"}, {"url" : "https://github.com/andrewnordlund/nordValidator/", "text" : "GitHub repo"}]
+		},
+		"Nordburg Audit Helper Firefox Extension" : {
+			"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "Accessibility", "ATOM"],
+			"sig" : "<p>This Firefox extension is to help auditors do an audit on a website.  It will calculate the number of pages to do to fill a \"Random Sample\" requirement. It records the URLs and titles of pages visited in an audit. It tells you abuut the DOCTYPE of the page you're looking at, the defined language of the page (ex: <code>lang=\"en\"</code), and compares the <code>&lt;h1&gt;</code>s, the <code>&lt;title&gt;</code>, the metadata, and the final entry in a breadcumbs list (if it can find them).  It informs you of any RSS/ATOM feeds it can find on the page.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/ext/home.php#nordAHSect", "text" : "Installation page"}, {"url" : "https://github.com/andrewnordlund/nordAH", "text" : "GitHub repo"}]
+		},
+		"Other Firefox extensions, and the website for them": {
+			"tags" : ["personal", "php", "xml", "Firefox", "extension", "Collaborative", "ATOM"],
+			"sig" : "<p>The main site for all of my browser extensions and bookmarklets.  (I still need to improve the way bookmarklets are handled.)  All of my legacy Firefox extensions can be found here.  (Legacy extensions require you to restart Firefox after installing or upgrading them.  They work up to Firefox v56.)</p>\n\t\t\t<p>Also seen on this page is a \"What's New\" section listing when updates to the exteions were made.  This uses my own custom ATOM feed wrapper.</p>\n\t\t\t\t<p>Also, there's a whole admin section for me to upload updated extensions, and cretae scaffolding for new extensions.  Furthermore, some extensions won't be seen by default.  Some are only visible on a GoC network.  Some are private to me, and those I grant access to.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/ext/home.php", "text" : "Nordburg Firefox Extensions"}]
+		},
+		"Backpay Calculator": {
+			"tags" : ["personal", "HTML/CSS/Javascript", "Calculator", "Collaborative"],
+			"sig" : "<p>Whenever my union's bargaining group presents a Tentative Agreement to the members, then signs a new Collective Agreement, it's always several months after the Agreement comes into effect. This means that raises are retroactive. Everyone is in that bargaining group is getting 'Backpay', A.K.A. a 'retro-cheque'.  And everyone wants to know what theirs is going to be like.</p>\n\t\t\t\t<p>There is a spreadsheet that does much the same thing, but I wanted to create a web based one.</p><p>I consider it a collaborative effort because someone else translated it into French, and someone else added styling with Bootsrap.js.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/calculators/backpayCalc/", "text" : "Backpay Calculator"}, {"url" : "https://github.com/andrewnordlund/backpayCalc", "text" : "GitHub repo"}]
+		},
+		"Reverse Mortgage calculator": {
+			"tags" : ["personal", "HTML/CSS/Javascript", "Calculator", "Proof-of-concept"],
+			"sig" : "<p>If you know how much money you can afford to put towards a mortgage per month or per fortnight, so you want to know how big of a mortgage you can afford at a given interest rate, then this calculator is for you.</p>\n\t\t\t\t<p>It's a proof-of-concept, so don't make any big decisions based on it!</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/calculators/revmortCalc/revmortCalc.html", "text" : "Reverse Mortgage Affordability Calculator"}, {"url" : "https://github.com/andrewnordlund/revmortCalc", "text" : "GitHub repo"}]
+		},
+		"Rent Vs. Own" : {
+			"tags" : ["personal", "HTML/CSS/Javascript", "Calculator", "Proof-of-concept"],
+			"sig" : "<p>Compare the cost of owning a particular house vs renting a particular place.  Very proof-of-concept.  Please don't make big decisions based on this.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/calculators/housingCalc/rentvown.html", "text" : "Rent Vs. Own Calculator"}, {"url" : "https://github.com/andrewnordlund/housingCalc", "text":"GitHub repo"}]
+		},
+		"Which Home to Own?" : {
+			"tags" : ["personal", "HTML/CSS/Javascript", "Calculator", "Proof-of-concept"],
+			"sig" : "<p>Compare the cost of owning one house vs owning another place.  Very proof-of-concept.  Please don't make big decisions based on this.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/calculators/housingCalc/housevhouse.html", "text" : "Which Home to Own?"}, {"url" : "https://github.com/andrewnordlund/housingCalc", "text":"GitHub repo"}]
+		},
+		"Tax Calculators" : {
+			"tags" : ["personal", "HTML/CSS/Javascript", "Calculator", "Proof-of-concept"],
+			"sig" : "<p>See the tax implications of various types of investments, both now and in retirement. Very proof-of-concept.  Please don't make big decisions based on this.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/calculators/taxCalc/index.html", "text" : "Tax Calculators"}, {"url" : "https://github.com/andrewnordlund/taxCalc", "text":"GitHub repo"}]
+		},
+		"Wall Builder Calculator" : {
+			"tags" : ["personal", "HTML/CSS/Javascript", "Calculator", "Proof-of-concept"],
+			"sig" : "<p>Want to soundproof your house, condo, or a room?  Wonder how much the materials will cost?  Given a size of wall, and materials, this will give a rough estimate with, now, very outdated prices. Very proof-of-concept.  Please don't make big decisions based on this.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/calculators/wallbuildercalculator/wallbuildercalculator.html", "text" : "Wall Builder Calculator"}, {"url" : "https://github.com/andrewnordlund/wallbuildercalculator", "text":"GitHub repo"}]
+		},
+		"Tax API": {
+			"tags" : ["personal", "Proof-of-concept", "Calculator", "API", "json"],
+			"sig" : "<p>My first crack an a RESTful API.  Given a tax year (2024 and beyond), a 2 or 3 character province code, and an amount, the API will return tax related information, such as how much tax you'd pay on that amount, what tax brackets you would be in, your average tax rate, your marginal tax rate.  And if you wanted that amount to be your net income, how much would you need to gross for that to happen.</p><p>It's a proof-of-concept.  Please don't make big decisions based on the information provided here.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/taxapi/index.php", "text" : "Tax API"}, {"url" : "https://github.com/andrewnordlund/taxapi", "text" : "GitHub Repo"}]
+		},
+		"Intro to Git" : {
+			"tags" : ["personal", "tutorial", "revealJS"],
+			"sig" : "<p>When I was first introduced to Git, I had difficulty grasping it.  When the light finally did come on, I realized I had been thinking about it like a centralized system. This prevented me from understanding it.</p>\n\t\t\t\t<p>Furthermore, I was working with a number of people who weren't comfortable with Git.  I figured that I wasn't the only one with my own mental roadblocks.  So, in an effort to learn RevealJS, and teach others the basics of how Git works, I wrote this tutorial.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/tutorials/Git/", "text" : "Intro to Git"}, {"url" : "https://github.com/andrewnordlund/tutorials", "text" : "GitHub Repo"}]
+		},
+		"Intro to WAI-ARIA" : {
+			"tags" : ["personal", "tutorial", "revealJS", "accessibility"],
+			"sig" : "<p>This tutorial, which includes optional homework at the end, is designed to bring developers and accessibility auditors from a state of knowing nothing about ARIA to a point of being somewhat useful.  It's far from exhaustive.  It's an intro.  It should give one the confidence, and the tools to use, or audit, ARIA properly.</p>",
+			"link" : [{"url" : "https://www.nordburg.ca/tutorials/aria/#/", "text" : "Intro to WAI-ARIA"}, {"url" : "https://github.com/andrewnordlund/tutorials", "text" : "GitHub Repo"}, {"url" : "https://github.com/andrewnordlund/aria-intro-tutorial", "text" : "ARIA Intro Homework GitHub repo"}]
+		},
+		"How To Make PowerApps Canvas Apps Accessible" : {
+			"tags" : ["personal", "tutorial", "revealJS", "accessibility"],
+			"sig" : "<p>This tongue-in-cheek tutorial highlights the inherent risks of using MS PowerApps Canvas apps in contexts which have legal and/or ethical requirements for accessibility.  (Maybe I should do one for SharePoint sites?  It'd be pretty similar.)",
+			"link" : [{"url" : "https://www.nordburg.ca/tutorials/PowerAppsCanvas/", "text" : "How To Make PowerApps Canvas Apps Accessible"}, {"url" : "https://github.com/andrewnordlund/tutorials", "text" : "GitHub Repo"}]
+		},
+		"iTunes-reset-skip-count" : {
+			"tags" : ["personal", "AppleScript", "iTunes"],
+			"sig" : "<p>Allows you to reset the Skip Count on a song in iTunes.  I forget why I did this in the first place.  Anyway, I wanted it for some reason, and I wanted to learn to do AppleScripting.</p>",
+			"link" : [{"url" : "https://github.com/andrewnordlund/iTunes-reset-skip-count", "text" : "Github Repo"}]
+		},
+		"iTunes-reset-skip-count" : {
+			"tags" : ["personal", "AppleScript", "iTunes"],
+			"sig" : "<p>This is three separate AppleScripts. One is if you have a long file (say, a whole podcast episode, or a whole album as one file), and you want to create an MP3 of just a section. You can define the start and end times in the song's info settings.  Then you can run the script, and it will create an MP3 file of just that portion.  The second is like it, but will also add the new file to a playlist called \"From Podcasts\" if it exists.  Third is like it, but will add it a playlist called \"Instrumental\" if it exists.</p>",
+			"link" : [{"url" : "https://github.com/andrewnordlund/iTunes-create-from-long", "text" : "Github Repo"}]
+		},
+		"ATOM wrapper": {
+			"tags" : ["personal", "php", "xml", "ATOM"],
+			"sig" : "<p>Instead of manually writing the XML for anywhere I'd want a feed, I wanted a way of doing it by interacting with an ATOM feed directly. I looked around and all I found were buggy, abandoned options, or full fledged blogging software.  So I wrote this.  I use it in several of my apps now.</p>\n\t\t\t\t<p>It's probably pretty buggy itself, but I dont' consider it to be abandoned, so bugs can be fixed over time.</p>\n\t\t\t\t<p>Maybe one day I'll make it a Composer package.</p>",
+			"link" : [{"url" : "https://github.com/andrewnordlund/atom-php", "text" : "GitHub repo"}]
+		}
+	},
+	"Work Projects" : {
+		"CDTS (Content Delivery Template Solutions) Version Finder) Firefox Extension" : {
+			"tags" : ["work", "accessibility", "Firefox", "extension", "HTML/CSS/Javascript", "Collaborative"],
+			"sig" : "<p>If a page uses the Content Delivery Template Solutions (CDTS), this extension will tell you which version and theme. If the page is using CDTS, you can use this extension to see what that page would look like with another CDTS version and theme.</p>\n\t\t\t\t\t<p>Note, the link will likely only work on Government of Canada network.</p>\n\t\t\t\t\t<p>It's a collaborative effort.  We had students do the bulk of the initial code, which I oversaw.  I wrote the part that allows you to see what a page would look like in a different version and theme.</p>",
+			"link" : [{"url" : "cdtsVersionFinderSect", "text" : "Installation page"}]
+		},
+		"WPSS" : {
+			"tags" : ["work", "Perl", "accessibility", "collaborative"],
+			"sig" : "<p>When I started with the Accessibility team at work, I updated the code of this site scanner to allow for the scanning of https sites. It was before it was on GitHub.  It was so long ago, I'm not even sure my code is still in there.  But I did it, and here's a reference to it for posterity sake.</p>",
+			"link" : [{"url" : "https://github.com/wet-boew/wet-boew-wpss", "text" : "GitHub repo"}]
+		},
+		"CPP-e (Canada Pension Plan Enhancement" : {
+			"tags" : ["work", "COBOL", "collaborative"],
+			"sig" : "<p>My main work these days.  I only joined the project in early 2024, after most work was done.  I'm mostly bug-squashing these days.  Due to [reasons] I'll leave it at that.  This portfolio is so I can showcase what I've worked on.  Since this all happens on a mainframe that I'll never see, there's not much to showcase.  But I feel like I would be remiss if I left out my day job from my portfilio.</p>\n\t\t\t\t<p>I consider this to be collaborative because I'm certainly not doing the entire thing myself!</p>"
+		},
+		"Learning Path for Web Auditors" : {
+			"tags" : ["work", "HTML/CSS/Javascript", "accessibility", "tutorials", "collaborative"],
+			"sig" : "<p>In order to onboard new web auditors, we needed a consistent learning path.  So I wrote one.  It's modularized in such a way that if an employee already knows one part, they can just skip over it.</p>\n\t\t\t\t\t<p>Essentially, this is just a link to some resources to learn to be a web accessibility auditor.</p>\n\t\t\t\t<p>Note that I am no longer with this team, and this may be updated or removed by the time you look at it.</p>",
+			"link" : [{"url" :"https://bati-itao.github.io/learning/learning-path-for-auditors/web-auditor-learning-path/web-auditor-learning-path-en.html", "text" : "Learning Path for Web Auditors"}]
+		},
+		"Accessibility Audit Practice Site" : {
+			"tags" : ["work", "accessibility", "HTML/CSS/Javascript", "tutorials"],
+			"sig" : "<p>As part of the training program for new accessibility auditors, we ask them to do a practice audit on a site with known WCAG failures.  We use the practice site.  We also use it to check automated testing tools to see how many issues and false-positives they raise.</p>",
+			"link" : [{"url" : "https://cenw-wscoe.github.io/practice-site/banana/", "text" :"Practice Site"}]
+		}
+	},
+	"Private Projects" : {
+		"Facebook Friend Tracker Firefox Extension" : {
+			"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "private"],
+			"sig" : "<p>Want to know if someone's defriended you on Facebook?  Or merely deactivated their account?  Or both?</p>\n\t\t\t\t<p>Then this extension is for you.</p>\n\t\t\t\t<p>Except Facebook seems to change their code every second week, and I'm just one person.  I don't have time to keep up with it all.  Furthermore, the whole Facebook experience jumped the shark, and I just no longer care to keep this up to date.</p>\n\t\t\t\t<p>Also, for various reasons, I've kept it private, so there are no links.  Sorry.</p>"
+		},
+		"Twitter Follower Tracker Firefox Extension" : {
+			"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "private"],
+			"sig" : "<p>Want to know if someone stopped following you on Twitter?</p>\n\t\t\t\t<p>Then this extension is for you.</p>\n\t\t\t\t<p>Except Twitter seems to have jumped the shark with the change to \"X\". (I will never call it that) and I just no longer care to keep this up to date.</p>\n\t\t\t\t<p>Also, for various reasons, I've kept it private, so there are no links.  Sorry.</p>"
+		},
+		"Nordburg Pay Tracker Firefox Extension" : {
+			"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "private"],
+			"sig" : "<p>This extension scans your Phoenix/CWA paystub and keeps the data locally. I initially wrote this when the paper paystubs stopped, and I found out that CWA only lets you see this year's stubs, and last year's.  I didn't want to lose that information.  So I wrote this extension.</p>\n\t\t\t\t\t<p>Last I checked, it no longer works on CWA.  And I haven't gotten it to work on MyGCPay yet.</p>\n\t\t\t\t<p>Also, for various reasons, I've kept it private, so there are no links.  Sorry.  I may open it up in the future.  But since Phoenix lets you go back several years, this isn't a top priority for me.</p>"
+		}
+	},
+	"Abandoned Projects" : {
+		"Nordburg Music Database" : {
+			"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "abandoned"],
+			"sig" : "<p>When I first started to learn to play guitar, I would look up chording and tabs for songs, often to see them in a key I couldn't play in.  So I wrote a site to do that, but to allow you to change the key.  But, aside from hosting other people's intellectual property (although there was a lot of public domain works there), as I got better, I could transpose the keys in my head, and the site no longer seemed worth maintaining.</p>"
+		},
+		"Nordburg Book Database" : {
+			"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "abandoned"],
+			"sig" : "<p>Unhappy with the lack of statistical data in Goodreads, I decided to write my own alternative.  It was going well until a major source for information, the <a href=\"https://isbndb.com/\">isbndb</a> went pay-only.  Then I discovered <a href=\"https://www.thestorygraph.com/\">The Story Graph</a>, which is also not ideal, but does do statistical analysis on your reading.  Between that and Goodreads, I decided that was good enough for my purposes.  So I abandoned this.</p>"
+		}
 	}
 }

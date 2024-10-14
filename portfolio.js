@@ -23,11 +23,9 @@ function init() {
 				if (payload["personalProjects"][pp]["link"].length == 1) {
 					let linkP = createHTMLElement("p", {"parentNode" : linkSect});
 					let linkA = createHTMLElement("a", {"parentNode" : linkP, "href" : payload["personalProjects"][pp]["link"][0]["url"], "textNode" : payload["personalProjects"][pp]["link"][0]["text"]});
-				} else if (payload["personalProjects"][pp]["links"].length > 1) {
-					let linkSect = createHTMLElement("sect", {"parentNode" : els["personalProjects"]});
-					let linkH = createHTMLElement("h4", {"parentNode" : linkSect, "textNode" : "Links"});
+				} else if (payload["personalProjects"][pp]["link"].length > 1) {
 					let linkOL = createHTMLElement("ol", {"parentNode" : linkSect});
-					for (let i = 0; i < payload["personalProjects"][pp]["links"].length; i++) {
+					for (let i = 0; i < payload["personalProjects"][pp]["link"].length; i++) {
 						let linkLi = createHTMLElement("li", {"parentNode" : linkOL});
 						let linkA = createHTMLElement("a", {"parentNode" : linkLi, "href" : payload["personalProjects"][pp]["link"][i]["url"], "textNode" : payload["personalProjects"][pp]["link"][i]["text"]});
 						
