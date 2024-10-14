@@ -2,7 +2,7 @@ let dbug = true;
 let payload = {};
 
 function init() {
-	let els = {"personalProjects" : null};
+	let els = {"contents" : null};
 
 	for (let el in els) {
 		els[el] = document.getElementById(el);
@@ -11,42 +11,49 @@ function init() {
 			continue;
 		}
 	}
-
+	if (dbug) console.log ("Initting");
 	// Do Personal projects
-	for (let pp in payload["personalProjects"]) {
-		let ppH3 = createHTMLElement("h3", {"parentNode" : els["personalProjects"], "textNode":pp});
-		if (payload["personalProjects"][pp]["link"]) {
-			if (payload["personalProjects"][pp]["link"].length > 0 ) {
-				let linkSect = createHTMLElement("sect", {"parentNode" : els["personalProjects"]});
-				let linkH = createHTMLElement("h4", {"parentNode" : linkSect, "textNode" : "Links"});
+	for (let sect in payload) {
+		let catSect = createHTMLElement("section", {"parentNode" : els["contents"]});
+		if (payload[sect]["info"]) {
+			let ppH2 = createHTMLElement("h2", {"parentNode": catSect, "textNode":sect});
+			let explDiv = createHTMLElement("div", {"parentNode" : catSect, "innerHTML" : payload[sect]["info"]});
+		}
+		for (let pp in payload[sect]["projects"]) {
+			let projSect = createHTMLElement("section", {"parentNode" : catSect});
+			let ppH3 = createHTMLElement("h3", {"parentNode" : projSect, "textNode":pp});
+			if (payload[sect]["projects"][pp]["link"]) {
+				if (payload[sect]["projects"][pp]["link"].length > 0 ) {
+					let linkSect = createHTMLElement("sect", {"parentNode" : projSect});
+					let linkH = createHTMLElement("h4", {"parentNode" : linkSect, "textNode" : "Links"});
 			
-				if (payload["personalProjects"][pp]["link"].length == 1) {
-					let linkP = createHTMLElement("p", {"parentNode" : linkSect});
-					let linkA = createHTMLElement("a", {"parentNode" : linkP, "href" : payload["personalProjects"][pp]["link"][0]["url"], "textNode" : payload["personalProjects"][pp]["link"][0]["text"]});
-				} else if (payload["personalProjects"][pp]["link"].length > 1) {
-					let linkOL = createHTMLElement("ol", {"parentNode" : linkSect});
-					for (let i = 0; i < payload["personalProjects"][pp]["link"].length; i++) {
-						let linkLi = createHTMLElement("li", {"parentNode" : linkOL});
-						let linkA = createHTMLElement("a", {"parentNode" : linkLi, "href" : payload["personalProjects"][pp]["link"][i]["url"], "textNode" : payload["personalProjects"][pp]["link"][i]["text"]});
-						
+					if (payload[sect]["projects"][pp]["link"].length == 1) {
+						let linkP = createHTMLElement("p", {"parentNode" : linkSect});
+						let linkA = createHTMLElement("a", {"parentNode" : linkP, "href" : payload[sect]["projects"][pp]["link"][0]["url"], "textNode" : payload[sect]["projects"][pp]["link"][0]["text"]});
+					} else if (payload[sect]["projects"][pp]["link"].length > 1) {
+						let linkOL = createHTMLElement("ol", {"parentNode" : linkSect});
+						for (let i = 0; i < payload[sect]["projects"][pp]["link"].length; i++) {
+							let linkLi = createHTMLElement("li", {"parentNode" : linkOL});
+							let linkA = createHTMLElement("a", {"parentNode" : linkLi, "href" : payload[sect]["projects"][pp]["link"][i]["url"], "textNode" : payload[sect]["projects"][pp]["link"][i]["text"]});
+							
+						}
 					}
 				}
 			}
-		}
-		let ppSect = createHTMLElement("section", {"parentNode" : els["personalProjects"]});
-		if (payload["personalProjects"][pp]["sig"]) {
-			let sigH = createHTMLElement("h4", {"parentNode" : ppSect, "textNode": "Significance"});
-			let sig = createHTMLElement("div", {"parentNode" : ppSect, "innerHTML" : payload["personalProjects"][pp]["sig"]});
-		}
-		if (payload["personalProjects"][pp]["tags"]) {
-			let tagSect = createHTMLElement("sect", {"parentNode" : els["personalProjects"]});
-			let tagH = createHTMLElement("h4", {"parentNode" : tagSect, "textNode" : "Keywords"});
-			let tagOL = createHTMLElement("ol", {"parentNode" : tagSect});
-			for (let i = 0; i < payload["personalProjects"][pp]["tags"].length; i++) {
-				let tagLi = createHTMLElement("li", {"parentNode" : tagOL, "class" : "tag", "textNode" : payload["personalProjects"][pp]["tags"][i]});
-				
+			let ppSect = createHTMLElement("section", {"parentNode" : projSect});
+			if (payload[sect]["projects"][pp]["sig"]) {
+				let sigH = createHTMLElement("h4", {"parentNode" : ppSect, "textNode": "Significance"});
+				let sig = createHTMLElement("div", {"parentNode" : ppSect, "innerHTML" : payload[sect]["projects"][pp]["sig"]});
 			}
-
+			if (payload[sect]["projects"][pp]["tags"]) {
+				let tagSect = createHTMLElement("sect", {"parentNode" : projSect});
+				let tagH = createHTMLElement("h4", {"parentNode" : tagSect, "textNode" : "Keywords"});
+				let tagOL = createHTMLElement("ol", {"parentNode" : tagSect});
+				for (let i = 0; i < payload[sect]["projects"][pp]["tags"].length; i++) {
+					let tagLi = createHTMLElement("li", {"parentNode" : tagOL, "class" : "tag", "textNode" : payload[sect]["projects"][pp]["tags"][i]});
+				
+				}
+			}
 		}
 	}
 
@@ -58,11 +65,11 @@ function init() {
 
 function createHTMLElement (type, attribs) {
 	let newEl = document.createElement(type);
-	let fdbug = (arguments.length == 3 &&arguments[2] != null && arguments[2] != false || dbug == true ? true : false);
+	let fdbug = (arguments.length == 3 && arguments[2] != null && arguments[2] != false ? true : false);
 	for (let k in attribs) {
-		if (dbug) console.log("Dealing with attrib " + k + ".");
+		if (fdbug) console.log("Dealing with attrib " + k + ".");
 		if (k == "parentNode") {
-			if (dbug) console.log("Dealing with parentnode.");
+			if (fdbug) console.log("Dealing with parentnode.");
 			let parentNode = getHTMLElement(attribs[k], dbug);
 
 			try {
@@ -80,19 +87,19 @@ function createHTMLElement (type, attribs) {
 				console.error("Error appending newEl to parentNode: " + er.message + ".");
 			}
 		} else if (k == "textNode" || k == "nodeText") {
-			if (dbug) console.log("Dealing with textnode " + attribs[k] + ".");
+			if (fdbug) console.log("Dealing with textnode " + attribs[k] + ".");
 			if (typeof (attribs[k]) == "string") {
-				if (dbug) console.log("As string...");
+				if (fdbug) console.log("As string...");
 				newEl.appendChild(document.createTextNode(attribs[k]));
 			} else if (attribs[k] instanceof HTMLElement) {
-				if (dbug) console.log("As HTML element...");
+				if (fdbug) console.log("As HTML element...");
 				newEl.appendChild(attribs[k]);
 			} else {
-				if (dbug) console.log("As something else...");
+				if (fdbug) console.log("As something else...");
 				newEl.appendChild(document.createTextNode(attribs[k].toString()));
 			}
 		} else if (k == "innerHTML") {
-			if (dbug) console.log ("Dealing with innerHTML " + attribs[k] + ".");
+			if (fdbug) console.log ("Dealing with innerHTML " + attribs[k] + ".");
 			newEl.innerHTML = attribs[k];
 		} else if (k.match(/^insert(Before|After)$/)) {
 				// Do nothing.
@@ -138,7 +145,7 @@ async function getDataFile () {
 	} else {
 		console.error ("HTTP-Error: " + response.status);
 	}
-
+	console.log ("About to init");
 	init();
 } // End of getDataFile
 
