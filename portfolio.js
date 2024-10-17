@@ -14,18 +14,18 @@ function init() {
 	if (dbug) console.log ("Initting");
 	// Do Personal projects
 	for (let sect in payload) {
-		let catSect = createHTMLElement("section", {"parentNode" : els["contents"]});
+		let catSect = createHTMLElement("section", {"parentNode" : els["contents"], "class" : "category"});
 		if (payload[sect]["info"]) {
 			let ppH2 = createHTMLElement("h2", {"parentNode": catSect, "textNode":sect});
 			let explDiv = createHTMLElement("div", {"parentNode" : catSect, "innerHTML" : payload[sect]["info"]});
 		}
 		for (let pp in payload[sect]["projects"]) {
-			let projSect = createHTMLElement("section", {"parentNode" : catSect});
+			let projSect = createHTMLElement("section", {"parentNode" : catSect, "class" : "project"});
 			let ppH3 = createHTMLElement("h3", {"parentNode" : projSect, "textNode":pp});
 			if (payload[sect]["projects"][pp]["link"]) {
 				if (payload[sect]["projects"][pp]["link"].length > 0 ) {
 					let linkSect = createHTMLElement("sect", {"parentNode" : projSect});
-					let linkH = createHTMLElement("h4", {"parentNode" : linkSect, "textNode" : "Links"});
+					let linkH = createHTMLElement("h4", {"parentNode" : linkSect, "textNode" : "Links", "class" : "sr-only"});
 			
 					if (payload[sect]["projects"][pp]["link"].length == 1) {
 						let linkP = createHTMLElement("p", {"parentNode" : linkSect});
@@ -47,10 +47,12 @@ function init() {
 			}
 			if (payload[sect]["projects"][pp]["tags"]) {
 				let tagSect = createHTMLElement("sect", {"parentNode" : projSect});
-				let tagH = createHTMLElement("h4", {"parentNode" : tagSect, "textNode" : "Keywords"});
-				let tagOL = createHTMLElement("ol", {"parentNode" : tagSect});
+				let tagH = createHTMLElement("h4", {"parentNode" : tagSect, "textNode" : "Keywords", "class" : "sr-only"});
+				let tagOL = createHTMLElement("ol", {"parentNode" : tagSect, "class" : "tags"});
 				for (let i = 0; i < payload[sect]["projects"][pp]["tags"].length; i++) {
-					let tagLi = createHTMLElement("li", {"parentNode" : tagOL, "class" : "tag", "textNode" : payload[sect]["projects"][pp]["tags"][i]});
+					let tagLi = createHTMLElement("li", {"parentNode" : tagOL, "class" : "tag"});
+					let tagBtn = createHTMLElement("button", {"parentNode" : tagLi, "innerHTML" : payload[sect]["projects"][pp]["tags"][i]});
+					tagBtn.addEventListener("click", toggleTag, false);
 				
 				}
 			}
@@ -61,7 +63,9 @@ function init() {
 
 } // End of init
 
+function toggleTag (e) {
 
+} // End of toggleTag
 
 function createHTMLElement (type, attribs) {
 	let newEl = document.createElement(type);
