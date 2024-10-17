@@ -147,6 +147,11 @@
 				"sig" : "<p>Want to soundproof your house, condo, or a room?  Wonder how much the materials will cost?  Given a size of wall, and materials, this will give a rough estimate with, now, very outdated prices. Very proof-of-concept.  Please don't make big decisions based on this.</p>",
 				"link" : [{"url" : "https://www.nordburg.ca/calculators/wallbuildercalculator/wallbuildercalculator.html", "text" : "Wall Builder Calculator"}, {"url" : "https://github.com/andrewnordlund/wallbuildercalculator", "text":"GitHub repo"}]
 			},
+			"Car Cost Calculator" : {
+				"tags" : ["personal", "HTML/CSS/Javascript", "Calculator", "Proof-of-concept"],
+				"sig" : "<p>Should you buy a new car every few years, or buy a used car every few years, or lease a car?  This very basic calculator will help you see the long-term costs. Extremely proof-of-concept.  It assumed a constant rate of depreciation, and doesn't take into account repair costs.  Please don't make big decisions based on this.</p>",
+				"link" : [{"url" : "https://www.nordburg.ca/calculators/wallbuildercalculator/wallbuildercalculator.html", "text" : "Wall Builder Calculator"}, {"url" : "https://github.com/andrewnordlund/wallbuildercalculator", "text":"GitHub repo"}]
+			},
 			"Tax API": {
 				"tags" : ["personal", "Proof-of-concept", "Calculator", "API", "json"],
 				"sig" : "<p>My first crack an a RESTful API.  Given a tax year (2024 and beyond), a 2 or 3 character province code, and an amount, the API will return tax related information, such as how much tax you'd pay on that amount, what tax brackets you would be in, your average tax rate, your marginal tax rate.  And if you wanted that amount to be your net income, how much would you need to gross for that to happen.</p><p>It's a proof-of-concept.  Please don't make big decisions based on the information provided here.</p>",
@@ -243,6 +248,10 @@
 			"Twitter Follower Tracker Firefox Extension" : {
 				"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "private", "abandoned"],
 				"sig" : "<p>Want to know if someone stopped following you on Twitter?</p>\n\t\t\t\t<p>Then this extension is for you.</p>\n\t\t\t\t<p>Except Twitter seems to have jumped the shark with the change to \"X\". (I will never call it that) and I just no longer care to keep this up to date.</p>\n\t\t\t\t<p>Also, for various reasons, I've kept it private, so there are no links.  Sorry.</p>"
+			},
+			"Comic Reader Firefox Extension" : {
+				"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "private"],
+				"sig" : "<p>I enjoy a few daily comics.  This extension grabs just the comic images from various comic hosting sites, and displays them.  It allows you to Favourite some comics, and add keywords.  And it keeps track of the last day you read the comics, so if you miss a few days, you can pick up where you left off.</p>\n\t\t\t\t<p>I may convert this into an authenticated app on nordburg.ca.</p>\n\t\t\t\t<p>Also, for various reasons, I've kept it private, so there are no links.  Sorry.</p>"
 			},
 			"Nordburg Pay Tracker Firefox Extension" : {
 				"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "private"],
