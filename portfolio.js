@@ -2,7 +2,11 @@ let dbug = true;
 let payload = {};
 
 function init() {
-	let els = {"contents" : null};
+	let els = {
+		"contents" : null,
+		"summary" : null,
+	};
+	let tags = {};
 
 	for (let el in els) {
 		els[el] = document.getElementById(el);
@@ -50,15 +54,29 @@ function init() {
 				let tagH = createHTMLElement("h4", {"parentNode" : tagSect, "textNode" : "Keywords", "class" : "sr-only"});
 				let tagOL = createHTMLElement("ol", {"parentNode" : tagSect, "class" : "tags"});
 				for (let i = 0; i < payload[sect]["projects"][pp]["tags"].length; i++) {
+					let tag = payload[sect]["projects"][pp]["tags"][i];
 					let tagLi = createHTMLElement("li", {"parentNode" : tagOL, "class" : "tag"});
-					let tagBtn = createHTMLElement("button", {"parentNode" : tagLi, "innerHTML" : payload[sect]["projects"][pp]["tags"][i]});
+					let tagBtn = createHTMLElement("button", {"parentNode" : tagLi, "textNode" : tag});
 					tagBtn.addEventListener("click", toggleTag, false);
-				
+					
+					if (tags[tag]) {
+						tags[tag]["count"] += 1;
+					} else {
+						tags[tag] = {"count" : 1, "name" : tag}
+					}
 				}
 			}
 		}
 	}
 
+	if (els["summary"]) {
+		let tagsOL = createHTMLElement("ol", {"parentNode" : els["summary"]});
+
+		for (let tag in tags) {
+			let tagLI = createHTMLElement("li", {"parentNode" : tagsOL, "textNode" : tags[tag]["name"] + " (" + tags[tag]["count"] + ")"});
+		}
+
+	}
 
 
 } // End of init
