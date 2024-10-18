@@ -31,9 +31,7 @@ function init() {
 			let explDiv = createHTMLElement("div", {"parentNode" : catSect, "innerHTML" : payload[sect]["info"]});
 		}
 		for (let pp in payload[sect]["projects"]) {
-			if (summary["category"][sect]["projects"]["count"]) {
-				summary["category"][sect]["projects"]["count"] += 1;
-			}
+			summary["category"][sect]["projects"]["count"] += 1;
 			let projSect = createHTMLElement("section", {"parentNode" : catSect, "class" : "project"});
 			let ppH3 = createHTMLElement("h3", {"parentNode" : projSect, "textNode":pp});
 			if (payload[sect]["projects"][pp]["link"]) {
