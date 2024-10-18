@@ -6,7 +6,10 @@ function init() {
 		"contents" : null,
 		"summary" : null,
 	};
-	let tags = {};
+	let summary = {
+		"category" : {},
+		"tags" : {},
+	}
 
 	for (let el in els) {
 		els[el] = document.getElementById(el);
@@ -18,12 +21,19 @@ function init() {
 	if (dbug) console.log ("Initting");
 	// Do Personal projects
 	for (let sect in payload) {
-		let catSect = createHTMLElement("section", {"parentNode" : els["contents"], "class" : "category"});
+		let catSect = createHTMLElement("section", {"parentNode" : els["contents"], "class" : "category", "id" : sect.replace(" ", "-")});
+		if (!summary["category"][sect]) {
+			summary["category"][sect] = {"projects" : {"count" : 0}};
+		}
+
 		if (payload[sect]["info"]) {
 			let ppH2 = createHTMLElement("h2", {"parentNode": catSect, "textNode":sect});
 			let explDiv = createHTMLElement("div", {"parentNode" : catSect, "innerHTML" : payload[sect]["info"]});
 		}
 		for (let pp in payload[sect]["projects"]) {
+			if (summary["category"][sect]["projects"]["count"]) {
+				summary["category"][sect]["projects"]["count"] += 1;
+			}
 			let projSect = createHTMLElement("section", {"parentNode" : catSect, "class" : "project"});
 			let ppH3 = createHTMLElement("h3", {"parentNode" : projSect, "textNode":pp});
 			if (payload[sect]["projects"][pp]["link"]) {
@@ -59,10 +69,10 @@ function init() {
 					let tagBtn = createHTMLElement("button", {"parentNode" : tagLi, "textNode" : tag});
 					tagBtn.addEventListener("click", toggleTag, false);
 					
-					if (tags[tag]) {
-						tags[tag]["count"] += 1;
+					if (summary["tags"][tag]) {
+						summary["tags"][tag]["count"] += 1;
 					} else {
-						tags[tag] = {"count" : 1, "name" : tag}
+						summary["tags"][tag] = {"count" : 1, "name" : tag}
 					}
 				}
 			}
@@ -70,10 +80,17 @@ function init() {
 	}
 
 	if (els["summary"]) {
-		let tagsOL = createHTMLElement("ol", {"parentNode" : els["summary"]});
+	
+		let summaryOL = createHTMLElement ("ol", {"parentNode" : els["summary"]});
+		for (let sect in summary["category"]) {
+			let sectLI = createHTMLElement("li", {"parentNode" : summaryOL});
+			let sectA = createHTMLElement("a", {"parentNode" : sectLI, "textNode": sect, "href":"#" + sect.replace(" ", "-")});
+			let countSpan = createHTMLElement("span", {"parentNode" : sectLI, "textNode" : "(" + summary["category"][sect]["projects"]["count"] + ")"});
+		}
 
-		for (let tag in tags) {
-			let tagLI = createHTMLElement("li", {"parentNode" : tagsOL, "textNode" : tags[tag]["name"] + " (" + tags[tag]["count"] + ")"});
+		let tagsOL = createHTMLElement("ol", {"parentNode" : els["summary"]});
+		for (let tag in summary["tags"]) {
+			let tagLI = createHTMLElement("li", {"parentNode" : tagsOL, "textNode" : summary["tags"][tag]["name"] + " (" + summary["tags"][tag]["count"] + ")"});
 		}
 
 	}
