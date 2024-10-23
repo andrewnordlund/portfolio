@@ -34,9 +34,10 @@ li.tag {
 	margin-right: 0.6em;
 }
 li.tag button {
-	background-color: white;
-	border: none;
-	text-decoration: underline;
+	background-color: #E6E6FF;
+	border: thin solid blue; /*none;*/
+	border-radius: 0.7em;
+	/*text-decoration: underline;*/
 	color: blue;
 }
 

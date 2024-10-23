@@ -1,15 +1,22 @@
 let dbug = true;
 let payload = {};
+let els = {
+	"contents" : null,
+	"summary" : null,
+	"ariaLivePolite" : null
+};
+let summary = {
+	"category" : {},
+	"tags" : {},
+}
+let sep = "|";
+
+let filters = {};
+let hiding=[];
 
 function init() {
-	let els = {
-		"contents" : null,
-		"summary" : null,
-	};
-	let summary = {
-		"category" : {},
-		"tags" : {},
-	}
+
+	getFiltersFromURL();
 
 	for (let el in els) {
 		els[el] = document.getElementById(el);
@@ -25,6 +32,8 @@ function init() {
 		if (!summary["category"][sect]) {
 			summary["category"][sect] = {"projects" : {"count" : 0}};
 		}
+
+
 
 		if (payload[sect]["info"]) {
 			let ppH2 = createHTMLElement("h2", {"parentNode": catSect, "textNode":sect});
@@ -58,7 +67,7 @@ function init() {
 				let sig = createHTMLElement("div", {"parentNode" : ppSect, "innerHTML" : payload[sect]["projects"][pp]["sig"]});
 			}
 			if (payload[sect]["projects"][pp]["tags"]) {
-				let tagSect = createHTMLElement("sect", {"parentNode" : projSect});
+				let tagSect = createHTMLElement("section", {"parentNode" : projSect});
 				let tagH = createHTMLElement("h4", {"parentNode" : tagSect, "textNode" : "Keywords", "class" : "sr-only"});
 				let tagOL = createHTMLElement("ol", {"parentNode" : tagSect, "class" : "tags"});
 				for (let i = 0; i < payload[sect]["projects"][pp]["tags"].length; i++) {
@@ -70,8 +79,9 @@ function init() {
 					if (summary["tags"][tag]) {
 						summary["tags"][tag]["count"] += 1;
 					} else {
-						summary["tags"][tag] = {"count" : 1, "name" : tag}
+						summary["tags"][tag] = {"count" : 1, "name" : tag, "show" : true}
 					}
+					projSect.classList.add(tag.replace(" ", "-"));
 				}
 			}
 		}
@@ -86,10 +96,20 @@ function init() {
 			let countSpan = createHTMLElement("span", {"parentNode" : sectLI, "textNode" : "(" + summary["category"][sect]["projects"]["count"] + ")"});
 		}
 
-		let tagsOL = createHTMLElement("ol", {"parentNode" : els["summary"]});
+		let filterDialog = createHTMLElement("dialog", {"parentNode" : els["summary"], "id" : "filtersDialog"});
+		let filterDiv = createHTMLElement("div", {"parentNode" : filterDialog});
+		let filterH2 = createHTMLElement("h2", {"parentNode" : filterDiv, "textNode": "Filters"});
+		let filterH3 = createHTMLElement("h3", {"parentNode" : filterDiv, "textNode": "Showing"});
+
+		let tagsOL = createHTMLElement("ol", {"parentNode" : filterDiv});
 		for (let tag in summary["tags"]) {
-			let tagLI = createHTMLElement("li", {"parentNode" : tagsOL, "textNode" : summary["tags"][tag]["name"] + " (" + summary["tags"][tag]["count"] + ")"});
+			let tagLI = createHTMLElement("li", {"parentNode" : tagsOL});
+			let tagChk = createHTMLElement("input", {"parentNode" : tagLI, "type" : "checkbox", "id" :  summary["tags"][tag]["name"] + "Chk", "checked" : (hiding.includes(summary["tags"][tag]["name"]) ? "false" : "true")});
+			let tagLbl = createHTMLElement("label", {"parentNode" : tagLI, "for" : summary["tags"][tag]["name"] + "Chk", "textNode" : summary["tags"][tag]["name"] + " (" + summary["tags"][tag]["count"] + ")"});
 		}
+
+		let filterBtn = createHTMLElement("button", {"parentNode" : els["summary"], "class" : "filterBtn", "id" : "filterBtn", "textNode" : "Filters", "type" : "button"});
+		filterBtn.addEventListener("click", showFilters, false);
 
 	}
 
@@ -97,8 +117,71 @@ function init() {
 } // End of init
 
 function toggleTag (e) {
+	let tag = e.target.textContent.replace(" ", "-");
+	console.log ("Toggling tag " + tag + ".");
+	let url = new URL(document.location);
+	let params = url.searchParams;
+	let newURL = url.toString().replace(/#.*$/, "");
+	let hiding = [];
+	if (params.get("show")) {
+		hiding = params.get("show").split(sep);
+		let spot = hiding.indexOf(tag);
+		if (spot == -1) {
+			hiding.push(tag);
+			setLiveMessage ("Showing only " + hiding.join(", "));
+			hide (hiding);
+		} else {
+			hiding.splice(spot, 1);
+			if (hiding.length == 0) {
+				setLiveMessage ("Showing all.");
+			} else {
+				setLiveMessage ("Showing only " + hiding.join(", "));
+			}
+		}
+		//newURL = newURL.replace(/\?.*$/, "");
+	
+	} else {
+		hiding.push(tag);
+		hide (hiding);
+		setLiveMessage ("Showing only " + hiding.join(", "));
+		//newURL = newURL.replace(/\?.*$/, "");
+		//newURL += "?show=" + e.target.textContent.replace(" ", "-");
+	}
+	newURL = (hiding.length > 0 ? "?show=" + hiding.join(sep) : newURL.replace(/\?.*$/, ""));
+	history.pushState({}, document.title, newURL);
 
 } // End of toggleTag
+
+function hide (hiding) {
+	let selector = "section.project:not(." + hiding.join(", .") + ")";
+	console.log ("Getting " + selector + ".");
+	let others = document.querySelectorAll(selector);
+	console.log ("Got " + others.length + ".");
+	for (let i = 0; i < others.length; i++) {
+		others[i].classList.add("hide");
+	}
+} // End of hide
+
+function show (showing) {
+
+} // End of show
+
+function showFilters (e) {
+  let filtersDialog = null;
+  filtersDialog = document.getElementById("filtersDialog");
+  if (filtersDialog) filtersDialog.showModal();
+} // End of showFilters
+
+
+function getFiltersFromURL() {
+	let url = new URL(document.location);
+	let params = url.searchParams;
+//	let hiding = [];
+	if (params.get("show")) {
+		hiding = params.get("show").split(sep);
+	}
+} // End of getFiltersFromURL
+
 
 function createHTMLElement (type, attribs) {
 	let newEl = document.createElement(type);
@@ -172,7 +255,10 @@ function removeChildren (el) {
 	}
 } // End of removeChildren
 
-
+function setLiveMessage (msg) {
+	els["ariaLivePolite"].textContent = msg;
+	setTimeout (function () {els["ariaLivePolite"].textContent = "";}, 5000);
+} // End of setLiveMessage
 
 async function getDataFile () {
 	let response = await fetch("portfolio.json");
