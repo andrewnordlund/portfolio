@@ -34,13 +34,20 @@ li.tag {
 	margin-right: 0.6em;
 }
 li.tag button {
-	background-color: #E6E6FF;
+	background-color: #E6E7FF;
 	border: thin solid blue; /*none;*/
 	border-radius: 0.7em;
 	/*text-decoration: underline;*/
 	color: blue;
 }
-
+li.tag button:focus,
+li.tag button:active,
+li.tag button:hover {
+	background-color: #7575FF;
+	color: #EEEEFF;
+	border: 2px solid blue;
+	font-weight: 700;
+}
 /*
 html[fonts-loaded=true]:not([data-user-font=antialiased]) {
 	--font-accent: "Sysfont", var(--font-accent-fallback);

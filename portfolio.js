@@ -10,9 +10,12 @@ let summary = {
 	"tags" : {},
 }
 let sep = "|";
+let param = "h";
 
 let filters = {};
 let hiding=[];
+let showing=[];
+let showingOnly = null;
 
 function init() {
 
@@ -81,7 +84,7 @@ function init() {
 					} else {
 						summary["tags"][tag] = {"count" : 1, "name" : tag, "show" : true}
 					}
-					projSect.classList.add(tag.replace(" ", "-"));
+					projSect.classList.add(tag.replace(/[ \/]/g, "-"));
 				}
 			}
 		}
@@ -92,8 +95,8 @@ function init() {
 		let summaryOL = createHTMLElement ("ol", {"parentNode" : els["summary"]});
 		for (let sect in summary["category"]) {
 			let sectLI = createHTMLElement("li", {"parentNode" : summaryOL});
-			let sectA = createHTMLElement("a", {"parentNode" : sectLI, "textNode": sect, "href":"#" + sect.replace(" ", "-")});
-			let countSpan = createHTMLElement("span", {"parentNode" : sectLI, "textNode" : "(" + summary["category"][sect]["projects"]["count"] + ")"});
+			let sectA = createHTMLElement("a", {"parentNode" : sectLI, "textNode": sect, "href":"#" + sect.replace(/[ \/]/g, "-")});
+			let countSpan = createHTMLElement("span", {"parentNode" : sectLI, "textNode" : " (" + summary["category"][sect]["projects"]["count"] + ")"});
 		}
 
 		let filterDialog = createHTMLElement("dialog", {"parentNode" : els["summary"], "id" : "filtersDialog"});
@@ -106,51 +109,100 @@ function init() {
 			let tagLI = createHTMLElement("li", {"parentNode" : tagsOL});
 			let tagChk = createHTMLElement("input", {"parentNode" : tagLI, "type" : "checkbox", "id" :  summary["tags"][tag]["name"] + "Chk", "checked" : (hiding.includes(summary["tags"][tag]["name"]) ? "false" : "true")});
 			let tagLbl = createHTMLElement("label", {"parentNode" : tagLI, "for" : summary["tags"][tag]["name"] + "Chk", "textNode" : summary["tags"][tag]["name"] + " (" + summary["tags"][tag]["count"] + ")"});
+			tagChk.addEventListener("click", hideTag, false);
 		}
+
+		let closeDialogBtn = createHTMLElement("button", {"parentNode" : filterDiv, "textNode": "Close", "type" : "button"});
+		closeDialogBtn.addEventListener("click", hideFilters, false);
 
 		let filterBtn = createHTMLElement("button", {"parentNode" : els["summary"], "class" : "filterBtn", "id" : "filterBtn", "textNode" : "Filters", "type" : "button"});
 		filterBtn.addEventListener("click", showFilters, false);
 
 	}
+	window.addEventListener("popstate", getFiltersFromURL, false);
 
+	applyFilters();
 
 } // End of init
 
-function toggleTag (e) {
-	let tag = e.target.textContent.replace(" ", "-");
-	console.log ("Toggling tag " + tag + ".");
+function setURL (e) {
+	let url = new URL(document.location);
+	let fragment = null;
+	let newURL = url.toString();
+	fragment = newURL.match(/(#.*$)/);
+	if (fragment) newUrl = newURL.replace(fragment[1], "");
+	newURL = newURL.replace(/\?.*$/, "");
+
+	/*
+	if (hiding.length > 0 || showing.length > 0) {
+		newURL = "?";
+		if (hiding.length > 0) {
+			newURL .= "h=" + hiding.join(sep);
+			if (showing.length > 0) newURL .= "&";
+		}
+		if (showing.length > 0) newURL .= "s=" + showing.join(sep);
+	}
+	*/
+	if (showingOnly) {
+		if (showingOnly != "") newURL += "?so=" + showingOnly + (fragment ? fragment[1] : "");
+	} else {
+		if (fragment) newURL += fragment[1];
+	}
+	history.pushState({}, document.title, newURL);
+} // End of setURL
+
+function getFiltersFromURL() {
 	let url = new URL(document.location);
 	let params = url.searchParams;
-	let newURL = url.toString().replace(/#.*$/, "");
-	let hiding = [];
-	if (params.get("show")) {
-		hiding = params.get("show").split(sep);
-		let spot = hiding.indexOf(tag);
-		if (spot == -1) {
-			hiding.push(tag);
-			setLiveMessage ("Showing only " + hiding.join(", "));
-			hide (hiding);
-		} else {
-			hiding.splice(spot, 1);
-			if (hiding.length == 0) {
-				setLiveMessage ("Showing all.");
-			} else {
-				setLiveMessage ("Showing only " + hiding.join(", "));
-			}
-		}
-		//newURL = newURL.replace(/\?.*$/, "");
-	
-	} else {
-		hiding.push(tag);
-		hide (hiding);
-		setLiveMessage ("Showing only " + hiding.join(", "));
-		//newURL = newURL.replace(/\?.*$/, "");
-		//newURL += "?show=" + e.target.textContent.replace(" ", "-");
-	}
-	newURL = (hiding.length > 0 ? "?show=" + hiding.join(sep) : newURL.replace(/\?.*$/, ""));
-	history.pushState({}, document.title, newURL);
 
+	
+	if (params.get("so")) {
+		showingOnly = params.get("so");
+	}
+} // End of getFiltersFromURL
+
+function applyFilters () {
+	if (showingOnly) {
+		let selector = "section.project:not(." + showingOnly + ")";
+		if (dbug) console.log ("Selector: " + selector);
+		let sects = document.querySelectorAll(selector);
+		for (let i = 0; i < sects.length; i++) {
+			sects[i].classList.add("hide");
+		}
+	} else {
+		let sects = document.querySelectorAll("section.project.hide");
+		for (let i = 0; i < sects.length; i++) {
+			sects[i].classList.remove("hide");
+		}
+	}
+} // End of applyFilters
+
+function hideTag (e) {
+} // End of hideTag
+
+function showTag(e) {
+
+} // End of showTag
+
+// Toggling happens when you click on a tag, not a filter.  That's elsewhere.
+function toggleTag (e) {
+	let tag = e.target.textContent.replace(/[ \/]/g, "-");
+	if (dbug) console.log ("Toggling tag " + tag + ".");
+	if (showingOnly == tag) {
+		showingOnly = null;
+		setLiveMessage ("Showing all.");
+	} else {
+		showingOnly = tag;
+		setLiveMessage ("Showing only " + tag + ".");
+	}
+	applyFilters(); 
+	setURL();
 } // End of toggleTag
+
+
+function hideTag(tag) {
+
+} // End of hideTag
 
 function hide (hiding) {
 	let selector = "section.project:not(." + hiding.join(", .") + ")";
@@ -163,7 +215,7 @@ function hide (hiding) {
 } // End of hide
 
 function show (showing) {
-
+	//let projects = document.querySelectorAll("section.project"
 } // End of show
 
 function showFilters (e) {
@@ -172,15 +224,11 @@ function showFilters (e) {
   if (filtersDialog) filtersDialog.showModal();
 } // End of showFilters
 
-
-function getFiltersFromURL() {
-	let url = new URL(document.location);
-	let params = url.searchParams;
-//	let hiding = [];
-	if (params.get("show")) {
-		hiding = params.get("show").split(sep);
-	}
-} // End of getFiltersFromURL
+function hideFilters (e) {
+  let filtersDialog = null;
+  filtersDialog = document.getElementById("filtersDialog");
+  if (filtersDialog) filtersDialog.close();
+} // End of hideFilters
 
 
 function createHTMLElement (type, attribs) {
@@ -268,7 +316,7 @@ async function getDataFile () {
 	} else {
 		console.error ("HTTP-Error: " + response.status);
 	}
-	console.log ("About to init");
+	if (dbug) console.log ("About to init");
 	init();
 } // End of getDataFile
 
