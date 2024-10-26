@@ -10,6 +10,10 @@
 	margin: 0;
 }
 
+main {
+	margin: 3% 7%;
+}
+
 .category {
 	border-top: thin dashed #808080;
 }
@@ -41,11 +45,14 @@ li.tag button {
 	color: blue;
 }
 li.tag button:focus,
-li.tag button:active,
 li.tag button:hover {
 	background-color: #7575FF;
-	color: #EEEEFF;
+	color: #F5F5FF;
 	border: 2px solid blue;
+	font-weight: 700;
+}
+li.tag button[aria-pressed=true] {
+	color: #000000;
 	font-weight: 700;
 }
 /*

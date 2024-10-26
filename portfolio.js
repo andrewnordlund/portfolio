@@ -76,7 +76,7 @@ function init() {
 				for (let i = 0; i < payload[sect]["projects"][pp]["tags"].length; i++) {
 					let tag = payload[sect]["projects"][pp]["tags"][i];
 					let tagLi = createHTMLElement("li", {"parentNode" : tagOL, "class" : "tag"});
-					let tagBtn = createHTMLElement("button", {"parentNode" : tagLi, "textNode" : tag});
+					let tagBtn = createHTMLElement("button", {"parentNode" : tagLi, "textNode" : tag, "class" : tag.replace(/[ \/]/g, "-")});
 					tagBtn.addEventListener("click", toggleTag, false);
 					
 					if (summary["tags"][tag]) {
@@ -91,7 +91,7 @@ function init() {
 	}
 
 	if (els["summary"]) {
-	
+		let summaryH2 = createHTMLElement ("h2", {"parentNode" : els["summary"], "textNode": "Summary"});
 		let summaryOL = createHTMLElement ("ol", {"parentNode" : els["summary"]});
 		for (let sect in summary["category"]) {
 			let sectLI = createHTMLElement("li", {"parentNode" : summaryOL});
@@ -170,10 +170,18 @@ function applyFilters () {
 		for (let i = 0; i < sects.length; i++) {
 			sects[i].classList.add("hide");
 		}
+		let btns = document.querySelectorAll("button." + showingOnly);
+		for (let i = 0; i < btns.length; i++) {
+			btns[i].setAttribute("aria-pressed", "true");
+		}
 	} else {
 		let sects = document.querySelectorAll("section.project.hide");
 		for (let i = 0; i < sects.length; i++) {
 			sects[i].classList.remove("hide");
+		}
+		let btns = document.querySelectorAll("button[aria-pressed=true]");
+		for (let i = 0; i < btns.length; i++) {
+			btns[i].removeAttribute("aria-pressed");
 		}
 	}
 } // End of applyFilters
