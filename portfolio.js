@@ -99,6 +99,7 @@ function init() {
 			let countSpan = createHTMLElement("span", {"parentNode" : sectLI, "textNode" : " (" + summary["category"][sect]["projects"]["count"] + ")"});
 		}
 
+		/*
 		let filterDialog = createHTMLElement("dialog", {"parentNode" : els["summary"], "id" : "filtersDialog"});
 		let filterDiv = createHTMLElement("div", {"parentNode" : filterDialog});
 		let filterH2 = createHTMLElement("h2", {"parentNode" : filterDiv, "textNode": "Filters"});
@@ -117,7 +118,7 @@ function init() {
 
 		let filterBtn = createHTMLElement("button", {"parentNode" : els["summary"], "class" : "filterBtn", "id" : "filterBtn", "textNode" : "Filters", "type" : "button"});
 		filterBtn.addEventListener("click", showFilters, false);
-
+		*/
 	}
 	window.addEventListener("popstate", getFiltersFromURL, false);
 
