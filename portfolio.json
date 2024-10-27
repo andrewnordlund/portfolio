@@ -4,17 +4,17 @@
 		"projects" : {
 			"Nordburg.ca": {
 				"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript"],
-				"sig" : "<p>My main website.  Most of what I do ends up there.</p>\n\t\t\t<p>Sadly, there are a lof of really neat aspects of this site that exist only for admins (ie: me).  Such as a <a href=\"https://nordburg.ca/testPHP/keywordsTest/keywordPageTest.php\">keywords widget</a>, or an ATOM feed utility, and all user management features.</p>\n\t\t\t\t<p>But there are a lof of write-ups, and links; too many to list here.</p>\n\t\t\t\t<p>The main thing to note here is that the site involves my own custom PHP framework, of sorts, so that I can throw together a form-driven site or app pretty quickly.  And user management.  While, you can sign up for an account, there's not much use at this point.  There are a few apps that require sign-in (a to-do list, a bookmark app, etc., but they're mostly proof-of-concept rather than full fledged apps).</p>\n\t\t\t\t<p>The other thing about this site is that it uses the <a href=\"https://wet-boew.github.io/wet-boew/index.html\">Web Experience Toolkit (WET)</a>.  When I was working in web accessibility, it was part of my job to guide clients to use WET wherever possible. So, I took my own advice and implemented it on nordburg.ca so I could better help my clients; and so that I wouldn't have to re-invent the wheel whenever I needed something arleady accomplished by WET.</p>",
+				"sig" : "<p>My main website.  Most of what I do ends up there.</p>\n\t\t\t<p>Sadly, there are a lof of really neat aspects of this site that exist only for admins (ie: me).  Such as a <a href=\"https://nordburg.ca/testPHP/keywordsTest/keywordPageTest.php\">keywords widget</a>, or an ATOM feed utility, and all user management features.</p>\n\t\t\t\t<p>But there are a lof of write-ups, and links; too many to list here.</p>\n\t\t\t\t<p>The main thing to note here is that the site involves my own custom PHP framework, of sorts, so that I can throw together a form-driven site or app pretty quickly.  And user management.  While, you can sign up for an account, there's not much use at this point.  There are a few apps that require sign-in (a to-do list, a bookmark app, etc., but they're mostly proof-of-concept rather than full fledged apps).</p>\n\t\t\t\t<p>The other thing about this site is that it uses the <a href=\"https://wet-boew.github.io/wet-boew/index.html\">Web Experience Toolkit (WET)</a>.  When I was working in web accessibility, it was part of my job to guide clients to use WET wherever possible. So, I took my own advice and implemented it on nordburg.ca so I could better help my clients; and so that I wouldn't have to reinvent the wheel whenever I needed something already accomplished by WET.</p>",
 				"link" : [{"url":"https://www.nordburg.ca", "text": "Nordburg Solutions"}]
 			},
 			"Dilbert Search": {
 				"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "ATOM"],
-				"sig" : "<p>When Dilbert was cancelled, I still found it (particularely the \"Golden Age\" comics) still funny and relevant. The comics are still hosted on a content delivery network, and the links to those comics, along with comic titles, keywords, and transcripts, are all still on the Internet Archive.</p>\n\t\t\t\t<p>So I wrote some code to grab the data from the Internet Archive.  I then go and clean up the title, alternate text, transcripts and keywords. You can search for words, phrases, characters, etc.  The search engine searches alt text, transcripts, titles, and keywords, and gives a list of relevant comics.</p>\n\t\t\t\t<p>For logged-in users of nordburg.ca, you can Favorite comics.</p>\n\t\t\t\t<p>Furthermore, there are 4 ATOM feeds; one for all of Dilbert, one for early Dilbert, one for late Dilbert, and one for \"Golden Age\" Dilbert.  Each are updated daily.</p>",
+				"sig" : "<p>When Dilbert was cancelled, I still found it (particularly the \"Golden Age\" comics) still funny and relevant. The comics are still hosted on a content delivery network, and the links to those comics, along with comic titles, keywords, and transcripts, are all still on the Internet Archive.</p>\n\t\t\t\t<p>So I wrote some code to grab the data from the Internet Archive.  I then go and clean up the title, alternate text, transcripts and keywords. You can search for words, phrases, characters, etc.  The search engine searches alt text, transcripts, titles, and keywords, and gives a list of relevant comics.</p>\n\t\t\t\t<p>For logged-in users of nordburg.ca, you can Favorite comics.</p>\n\t\t\t\t<p>Furthermore, there are 4 ATOM feeds; one for all of Dilbert, one for early Dilbert, one for late Dilbert, and one for \"Golden Age\" Dilbert.  Each are updated daily.</p>",
 				"link" : [{"url" : "https://dev.nordburg.ca/misc/dilbert/index.php", "text" : "Dilbert Search"}]
 			},
 			"Nordburg Bookmarks" : {
 				"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "authenticated", "proof-of-concept"],
-				"sig" : "<p>A place for users of nordburg.ca to store list of links.  Like browser bookmarks, but not tied to a specific browser or browser instance.</p>\n\t\t\t\t<p>It's pretty proof-of-concept.  Even I don't use it.  Yet.  I envision being able to get the your list of links in a JSON format, and maybe display elsewhere, like in a browser extension.  Maybe one day.</p>\n\t\t\t\t<p>Requires nordburg.ca account.</p>",
+				"sig" : "<p>A place for users of nordburg.ca to store lists of links.  Like browser bookmarks, but not tied to a specific browser or browser instance.</p>\n\t\t\t\t<p>It's pretty proof-of-concept.  Even I don't use it.  Yet.  I envision being able to get the your list of links in a JSON format, and maybe display elsewhere, like in a browser extension.  Maybe one day.</p>\n\t\t\t\t<p>Requires nordburg.ca account.</p>",
 				"link" : [{"url" : "https://www.nordburg.ca/misc/bookmarks/bookmarks.php", "text" : "Nordburg Bookmarks"}]
 			},
 			"Nordburg Comparitor" : {
@@ -24,7 +24,7 @@
 			},
 			"Nordburg Sticky Note" : {
 				"tags" : ["personal", "php", "mysql", "HTML/CSS/Javascript", "authenticated", "proof-of-concept"],
-				"sig" : "<p>A place for users of nordburg.ca to store bits of information in an unorganized manner.  Like a big sticky note.</p>\n\t\t\t\t<p>Requires nordburg.ca account.</p>",
+				"sig" : "<p>A place for users of nordburg.ca to store bits of information in an unorganised manner.  Like a big sticky note.</p>\n\t\t\t\t<p>Requires nordburg.ca account.</p>",
 				"link" : [{"url" : "https://www.nordburg.ca/misc/stickies.php", "text" : "Nordburg Sticky Note"}]
 			},
 			"Nordburg To-Dos" : {
@@ -54,7 +54,7 @@
 			},
 			"What's Wrong With Accessibility Mode?" : {
 				"tags" : ["personal", "accessibility", "php", "HTML/CSS/Javascript", "writing"],
-				"sig" : "<p>It's all too common to see an option for \"Accessibility Mode\" or something similar on a web app. At the very least, it exposes the ignorange of the product owners. At the most, it's harmful to people with disabilities.  This essay explores that.</p>",
+				"sig" : "<p>It's all too common to see an option for \"Accessibility Mode\" or something similar on a web app. At the very least, it exposes the ignorance of the product owners. At the most, it's harmful to people with disabilities.  This essay explores that.</p>",
 				"link" : [{"url" : "https://www.nordburg.ca/a11y/accessibilityModes.php", "text" : "What's Wrong With Accessibility Mode?"}]
 			},
 			"How to Write Accessible Forms" : {
@@ -69,7 +69,7 @@
 			},
 			"Mr. Falcon js": {
 				"tags" : ["personal", "HTML/CSS/Javascript", "Game"],
-				"sig" : "<p>When I was a kid, I created a superhero, Mr. Falcon. Then, I wrote three games using QBASIC.  Over time, the original games became unplayable. So I re-wrote them in Javascript (without the use of frameworks, libraries, or game engines). The purpose was to take my Javascript to the next level, to learn OOP in Javascript, and allow for game-play in a browser so anyone could play, regardless of operating system.</p>",
+				"sig" : "<p>When I was a kid, I created a superhero, Mr. Falcon. Then, I wrote three games using QBASIC.  Over time, the original games had become unplayable. So I rewrote them in Javascript (without the use of frameworks, libraries, or game engines). The purpose was to take my Javascript to the next level, to learn OOP in Javascript, and allow for game-play in a browser so anyone could play, regardless of operating system.</p>",
 				"link": [{"url" : "https://www.mrfalcon.ca", "text" : "The Mr. Falcon Website"}]
 			},
 			"Field Runner": {
@@ -84,7 +84,7 @@
 			},
 			"Accessible Password Requirements widget": {
 				"tags" : ["personal", "HTML/CSS/Javascript", "accessibility"],
-				"sig" : "<p>When (re)setting a password, often times there are requirements (at least x characters, at least 1 uppercase letter, 1 lowercase letter, 1 special character, etc.).  Often times there are checkmarks and X's indicating if the requirement has been met. These are common, but difficult to do an an accessible mannaer.</p>\n\t\t\t<p>This widget is highly customizable and extensible.</p>\n",
+				"sig" : "<p>When (re)setting a password, oftentimes there are requirements (at least x characters, at least 1 uppercase letter, 1 lowercase letter, 1 special character, etc.).  Often times there are checkmarks and X's indicating if the requirement has been met. These are common, but difficult to do an an accessible manner.</p>\n\t\t\t<p>This widget is highly customizable and extensible.</p>\n",
 				"link" : [{"url" : "https://andrewnordlund.github.io/passwordRequirements/nordburgPwReqTest-Demo.html", "text":"Demo page"}, {"url" : "https://github.com/andrewnordlund/passwordRequirements", "text" : "GitHub Repo"}, {"url" : "https://www.npmjs.com/package/nordburg-pw-reqs", "text" : "npm Page"}]
 			},
 			"Nordburg Stopwatch Firefox Extension" : {
@@ -109,12 +109,12 @@
 			},
 			"Nordburg Audit Helper Firefox Extension" : {
 				"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "Accessibility", "ATOM"],
-				"sig" : "<p>This Firefox extension is to help auditors do an audit on a website.  It will calculate the number of pages to do to fill a \"Random Sample\" requirement. It records the URLs and titles of pages visited in an audit. It tells you abuut the DOCTYPE of the page you're looking at, the defined language of the page (ex: <code>lang=\"en\"</code), and compares the <code>&lt;h1&gt;</code>s, the <code>&lt;title&gt;</code>, the metadata, and the final entry in a breadcumbs list (if it can find them).  It informs you of any RSS/ATOM feeds it can find on the page.</p>",
+				"sig" : "<p>This Firefox extension is to help auditors do an audit on a website.  It will calculate the number of pages to do to fill a \"Random Sample\" requirement. It records the URLs and titles of pages visited in an audit. It tells you about the DOCTYPE of the page you're looking at, the defined language of the page (ex: <code>lang=\"en\"</code), and compares the <code>&lt;h1&gt;</code>s, the <code>&lt;title&gt;</code>, the metadata, and the final entry in a breadcumbs list (if it can find them).  It informs you of any RSS/ATOM feeds it can find on the page.</p>",
 				"link" : [{"url" : "https://www.nordburg.ca/ext/home.php#nordAHSect", "text" : "Installation page"}, {"url" : "https://github.com/andrewnordlund/nordAH", "text" : "GitHub repo"}]
 			},
 			"Other Firefox extensions, and the website for them": {
 				"tags" : ["personal", "php", "xml", "Firefox", "extension", "Collaborative", "ATOM"],
-				"sig" : "<p>The main site for all of my browser extensions and bookmarklets.  (I still need to improve the way bookmarklets are handled.)  All of my legacy Firefox extensions can be found here.  (Legacy extensions require you to restart Firefox after installing or upgrading them.  They work up to Firefox v56.)</p>\n\t\t\t<p>Also seen on this page is a \"What's New\" section listing when updates to the exteions were made.  This uses my own custom ATOM feed wrapper.</p>\n\t\t\t\t<p>Also, there's a whole admin section for me to upload updated extensions, and cretae scaffolding for new extensions.  Furthermore, some extensions won't be seen by default.  Some are only visible on a GoC network.  Some are private to me, and those I grant access to.</p>",
+				"sig" : "<p>The main site for all of my browser extensions and bookmarklets.  (I still need to improve the way bookmarklets are handled.)  All of my legacy Firefox extensions can be found here.  (Legacy extensions require you to restart Firefox after installing or upgrading them.  They work up to Firefox v56.)</p>\n\t\t\t<p>Also seen on this page is a \"What's New\" section listing when updates to the extensions were made.  This uses my own custom ATOM feed wrapper.</p>\n\t\t\t\t<p>Also, there's a whole admin section for me to upload updated extensions, and create scaffolding for new extensions.  Furthermore, some extensions won't be seen by default.  Some are only visible on a GoC network.  Some are private to me, and those I grant access to.</p>",
 				"link" : [{"url" : "https://www.nordburg.ca/ext/home.php", "text" : "Nordburg Firefox Extensions"}]
 			},
 			"Backpay Calculator": {
@@ -154,12 +154,12 @@
 			},
 			"Tax API": {
 				"tags" : ["personal", "Proof-of-concept", "Calculator", "API", "json"],
-				"sig" : "<p>My first crack an a RESTful API.  Given a tax year (2024 and beyond), a 2 or 3 character province code, and an amount, the API will return tax related information, such as how much tax you'd pay on that amount, what tax brackets you would be in, your average tax rate, your marginal tax rate.  And if you wanted that amount to be your net income, how much would you need to gross for that to happen.</p><p>It's a proof-of-concept.  Please don't make big decisions based on the information provided here.</p>",
+				"sig" : "<p>My first crack at a RESTful API.  Given a tax year (2024 and beyond), a 2 or 3 character province code, and an amount, the API will return tax related information, such as how much tax you'd pay on that amount, what tax brackets you would be in, your average tax rate, your marginal tax rate.  And if you wanted that amount to be your net income, how much would you need to gross for that to happen.</p><p>It's a proof-of-concept.  Please don't make big decisions based on the information provided here.</p>",
 				"link" : [{"url" : "https://www.nordburg.ca/taxapi/index.php", "text" : "Tax API"}, {"url" : "https://github.com/andrewnordlund/taxapi", "text" : "GitHub Repo"}]
 			},
 			"Intro to Git" : {
 				"tags" : ["personal", "tutorial", "revealJS"],
-				"sig" : "<p>When I was first introduced to Git, I had difficulty grasping it.  When the light finally did come on, I realized I had been thinking about it like a centralized system. This prevented me from understanding it.</p>\n\t\t\t\t<p>Furthermore, I was working with a number of people who weren't comfortable with Git.  I figured that I wasn't the only one with my own mental roadblocks.  So, in an effort to learn RevealJS, and teach others the basics of how Git works, I wrote this tutorial.</p>",
+				"sig" : "<p>When I was first introduced to Git, I had difficulty grasping it.  When the light finally did come on, I realised I had been thinking about it like a centralised system. This prevented me from understanding it.</p>\n\t\t\t\t<p>Furthermore, I was working with a number of people who weren't comfortable with Git.  I figured that I wasn't the only one with my own mental roadblocks.  So, in an effort to learn RevealJS, and teach others the basics of how Git works, I wrote this tutorial.</p>",
 				"link" : [{"url" : "https://www.nordburg.ca/tutorials/Git/", "text" : "Intro to Git"}, {"url" : "https://github.com/andrewnordlund/tutorials", "text" : "GitHub Repo"}]
 			},
 			"Intro to WAI-ARIA" : {
@@ -194,7 +194,7 @@
 			},
 			"Low Tide" : {
 				"tags" : ["personal", "bookmarklet", "Javascript", "accessibility"],
-				"sig" : "<p>If you run the WAVE (WebAIM Accessibilite Evaluator) extension, the page gets littered with artifacts. If you re-run it, the page reloads.  This is sub-optimal for single page apps.  So I wrote this bookmarklet to get rid of the artifacts.</p>",
+				"sig" : "<p>If you run the WAVE (WebAIM Accessibility Evaluator) extension, the page gets littered with artefacts. If you re-run it, the page reloads.  This is suboptimal for single page apps.  So I wrote this bookmarklet to get rid of the artefacts.</p>",
 				"link" : [{"url" : "https://andrewnordlund.github.io/low-tide/", "text" : "Low Tide Bookmarklet"}, {"url" : "https://github.com/andrewnordlund/low-tide/", "text" : "GitHub repo"}]
 			},
 			"Select-To-Datalist" : {
@@ -224,7 +224,7 @@
 			},
 			"CPP-e (Canada Pension Plan Enhancement" : {
 				"tags" : ["work", "COBOL", "collaborative"],
-				"sig" : "<p>My main work these days.  I only joined the project in early 2024, after most work was done.  I'm mostly bug-squashing these days.  Due to [reasons] I'll leave it at that.  This portfolio is so I can showcase what I've worked on.  Since this all happens on a mainframe that I'll never see, there's not much to showcase.  But I feel like I would be remiss if I left out my day job from my portfilio.</p>\n\t\t\t\t<p>I consider this to be collaborative because I'm certainly not doing the entire thing myself!</p>"
+				"sig" : "<p>My main work these days.  I only joined the project in early 2024, after most work was done.  I'm mostly bug-squashing these days.  Due to [reasons] I'll leave it at that.  This portfolio is so I can showcase what I've worked on.  Since this all happens on a mainframe that I'll never see, there's not much to showcase.  But I feel like I would be remiss if I left out my day job from my portfolio.</p>\n\t\t\t\t<p>I consider this to be collaborative because I'm certainly not doing the entire thing myself!</p>"
 			},
 			"Learning Path for Web Auditors" : {
 				"tags" : ["work", "HTML/CSS/Javascript", "accessibility", "tutorials", "collaborative"],
@@ -243,7 +243,7 @@
 		"projects" : {
 			"Facebook Friend Tracker Firefox Extension" : {
 				"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "private", "abandoned"],
-				"sig" : "<p>Want to know if someone's defriended you on Facebook?  Or merely deactivated their account?  Or both?</p>\n\t\t\t\t<p>Then this extension is for you.</p>\n\t\t\t\t<p>Except Facebook seems to change their code every second week, and I'm just one person.  I don't have time to keep up with it all.  Furthermore, the whole Facebook experience jumped the shark, and I just no longer care to keep this up to date.</p>\n\t\t\t\t<p>Also, for various reasons, I've kept it private, so there are no links.  Sorry.</p>"
+				"sig" : "<p>Want to know if someone has defriended you on Facebook?  Or merely deactivated their account?  Or both?</p>\n\t\t\t\t<p>Then this extension is for you.</p>\n\t\t\t\t<p>Except Facebook seems to change their code every second week, and I'm just one person.  I don't have time to keep up with it all.  Furthermore, the whole Facebook experience jumped the shark, and I just no longer care to keep this up to date.</p>\n\t\t\t\t<p>Also, for various reasons, I've kept it private, so there are no links.  Sorry.</p>"
 			},
 			"Twitter Follower Tracker Firefox Extension" : {
 				"tags" : ["personal", "Firefox", "extension", "HTML/CSS/Javascript", "private", "abandoned"],
