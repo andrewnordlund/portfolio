@@ -184,7 +184,7 @@
 			},
 			"ATOM wrapper": {
 				"tags" : ["personal", "php", "xml", "ATOM"],
-				"sig" : "<p>Instead of manually writing the XML for anywhere I'd want a feed, I wanted a way of doing it by interacting with an ATOM feed directly. I looked around and all I found were buggy, abandoned options, or full fledged blogging software.  So I wrote this.  I use it in several of my apps now.</p>\n\t\t\t\t<p>It's probably pretty buggy itself, but I dont' consider it to be abandoned, so bugs can be fixed over time.</p>\n\t\t\t\t<p>Maybe one day I'll make it a Composer package.</p>",
+				"sig" : "<p>Instead of manually writing the XML for anywhere I'd want a feed, I wanted a way of doing it by interacting with an ATOM feed directly. I looked around and all I found were buggy, abandoned options, or full fledged blogging software.  So I wrote this.  I use it in several of my apps now.</p>\n\t\t\t\t<p>It's probably pretty buggy itself, but I don't consider it to be abandoned, so bugs can be fixed over time.</p>\n\t\t\t\t<p>Maybe one day I'll make it a Composer package.</p>",
 				"link" : [{"url" : "https://github.com/andrewnordlund/atom-php", "text" : "GitHub repo"}]
 			},
 			"My Portfolio" : {
