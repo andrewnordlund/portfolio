@@ -1,4 +1,4 @@
-let dbug = true;
+let dbug = !true;
 let payload = {};
 let els = {
 	"contents" : null,
@@ -164,6 +164,7 @@ function getFiltersFromURL() {
 
 function applyFilters () {
 	if (showingOnly) {
+		clearPressed();
 		let selector = "section.project:not(." + showingOnly + ")";
 		if (dbug) console.log ("Selector: " + selector);
 		let sects = document.querySelectorAll(selector);
@@ -179,12 +180,16 @@ function applyFilters () {
 		for (let i = 0; i < sects.length; i++) {
 			sects[i].classList.remove("hide");
 		}
-		let btns = document.querySelectorAll("button[aria-pressed=true]");
-		for (let i = 0; i < btns.length; i++) {
-			btns[i].removeAttribute("aria-pressed");
-		}
+		clearPressed();
 	}
 } // End of applyFilters
+
+function clearPressed () {
+	let btns = document.querySelectorAll("button[aria-pressed=true]");
+	for (let i = 0; i < btns.length; i++) {
+		btns[i].removeAttribute("aria-pressed");
+	}
+} // End of clearPressed
 
 function hideTag (e) {
 } // End of hideTag
