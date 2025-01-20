@@ -40,7 +40,7 @@
                     "mysql",
                     "HTML\/CSS\/Javascript",
                     "authenticated",
-                    "proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>A place for users of nordburg.ca to store lists of links.  Like browser bookmarks, but not tied to a specific browser or browser instance.<\/p>\n\t\t\t\t<p>It's pretty proof-of-concept.  Even I don't use it.  Yet.  I envision being able to get the your list of links in a JSON format, and maybe display elsewhere, like in a browser extension.  Maybe one day.<\/p>\n\t\t\t\t<p>Requires nordburg.ca account.<\/p>",
                 "link": [
@@ -57,7 +57,7 @@
                     "mysql",
                     "HTML\/CSS\/Javascript",
                     "authenticated",
-                    "proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>Want to know which cell phone plan you should choose?  Or which job to take?  Or which city to live in?<\/p>\n\t\t\t\t\t<p>The Nordburg Comparitor allows you to enter various criteria (cost, location, whatever), and a bunch of things you're comparing (Bell, Telus, etc.) to allow you to see all factors in one place to help you make a decision.<\/p>\n\t\t\t\t\t<p>It's pretty proof-of-concept.  I envision being able to share your comparisons publicly on a per-comparison.  Maybe one day.<\/p>\n\t\t\t\t<p>Requires nordburg.ca account.<\/p>",
                 "link": [
@@ -74,7 +74,7 @@
                     "mysql",
                     "HTML\/CSS\/Javascript",
                     "authenticated",
-                    "proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>A place for users of nordburg.ca to store bits of information in an unorganised manner.  Like a big sticky note.<\/p>\n\t\t\t\t<p>Requires nordburg.ca account.<\/p>",
                 "link": [
@@ -91,7 +91,7 @@
                     "mysql",
                     "HTML\/CSS\/Javascript",
                     "authenticated",
-                    "proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>A pretty simple To-Do list; or a list of To-Do lists.<\/p>\n\t\t\t\t\t<p>Requires nordburg.ca account.<\/p>",
                 "link": [
@@ -313,7 +313,7 @@
                     "Firefox",
                     "extension",
                     "HTML\/CSS\/Javascript",
-                    "Proof-of-Contept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>A simple stopwatch in the browser. Initially used to time how long an accessibility audit took. But could be used to time anything.<\/p>",
                 "link": [
@@ -452,7 +452,7 @@
                     "personal",
                     "HTML\/CSS\/Javascript",
                     "Calculator",
-                    "Proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>If you know how much money you can afford to put towards a mortgage per month or per fortnight, so you want to know how big of a mortgage you can afford at a given interest rate, then this calculator is for you.<\/p>\n\t\t\t\t<p>It's a proof-of-concept, so don't make any big decisions based on it!<\/p>",
                 "link": [
@@ -471,7 +471,7 @@
                     "personal",
                     "HTML\/CSS\/Javascript",
                     "Calculator",
-                    "Proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>Compare the cost of owning a particular house vs renting a particular place.  Very proof-of-concept.  Please don't make big decisions based on this.<\/p>",
                 "link": [
@@ -490,7 +490,7 @@
                     "personal",
                     "HTML\/CSS\/Javascript",
                     "Calculator",
-                    "Proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>Compare the cost of owning one house vs owning another place.  Very proof-of-concept.  Please don't make big decisions based on this.<\/p>",
                 "link": [
@@ -509,7 +509,7 @@
                     "personal",
                     "HTML\/CSS\/Javascript",
                     "Calculator",
-                    "Proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>See the tax implications of various types of investments, both now and in retirement. Very proof-of-concept.  Please don't make big decisions based on this.<\/p>",
                 "link": [
@@ -528,7 +528,7 @@
                     "personal",
                     "HTML\/CSS\/Javascript",
                     "Calculator",
-                    "Proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>Want to soundproof your house, condo, or a room?  Wonder how much the materials will cost?  Given a size of wall, and materials, this will give a rough estimate with, now, very outdated prices. Very proof-of-concept.  Please don't make big decisions based on this.<\/p>",
                 "link": [
@@ -547,7 +547,7 @@
                     "personal",
                     "HTML\/CSS\/Javascript",
                     "Calculator",
-                    "Proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>Should you buy a new car every few years, or buy a used car every few years, or lease a car?  This very basic calculator will help you see the long-term costs. Extremely proof-of-concept.  It assumed a constant rate of depreciation, and doesn't take into account repair costs.  Please don't make big decisions based on this.<\/p>",
                 "link": [
@@ -564,7 +564,7 @@
             "Tax API": {
                 "tags": [
                     "personal",
-                    "Proof-of-concept",
+                    "Proof-of-Concept",
                     "Calculator",
                     "API",
                     "json",
@@ -713,7 +713,7 @@
                     "personal",
                     "HTML\/CSS\/Javascript",
                     "greasemonkey",
-                    "proof-of-concept"
+                    "Proof-of-Concept"
                 ],
                 "sig": "<p>This is some Javascript to convert a <code>&lt;select&gt;<\/code> to an <code>&lt;input list=\"xyz\"&gt; &lt;datalist id=\"xyz\"&gt;<\/code>.  It can also be included as a <a href=\"https:\/\/addons.mozilla.org\/en-CA\/firefox\/addon\/greasemonkey\/\">Greasemonkey<\/a> script.<\/p>",
                 "link": [
@@ -730,20 +730,12 @@
             "Latt\u00e9 Factor Calculator": {
                 "tags": [
                     "HTML\/CSS\/Javascript",
-                    "Calculator"
+                    "Calculator",
+                    "personal",
+                    "Proof-of-Concept"
                 ],
                 "sig": "A general latt\u00e9 factor calculator - to see the long term implications of having a daily latt\u00e9; or other expense, like Netflix.",
                 "link": [
-                    {
-                        "url": "https:\/\/nordburg.ca\/calculators\/lattefactor\/lattefactor.html",
-                        "text": "Latt\u00e9 Factor Calculator"
-                    },
-                    {
-                        "url": "https:\/\/github.com\/andrewnordlund\/lattefactor",
-                        "text": "GitHub Repo"
-                    }
-                ],
-                "lastUpdated": [
                     {
                         "url": "https:\/\/nordburg.ca\/calculators\/lattefactor\/lattefactor.html",
                         "text": "Latt\u00e9 Factor Calculator"
